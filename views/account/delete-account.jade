@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+ .page-header
+    h3 Delete Account
+
+  p You can delete your account, but keep in mind this action is irreversible, and you will no longer help make the world better!
+  form(action='/account/delete', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    button.btn.btn-danger
+      span.ion-trash-b
+      | Delete my account
+        
