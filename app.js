@@ -5,6 +5,7 @@
 var express = require('express');
 var favicon = require('serve-favicon');
 
+
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
 var session = require('express-session');
@@ -220,8 +221,7 @@ app.use(errorHandler());
  */
 
 app.listen(app.get('port'), function() {
-  console.log('Hi, Macleod! Your server is currently listening on port %d in %s mode', app.get('port'), app.get('env'));
+  console.log('Welcome to the year %d, your wibbly-wobbly machine is currently in %s mode, now how do I turn the brakes off again?!?', app.get('port'), app.get('env'));
 });
-
 
 module.exports = app;

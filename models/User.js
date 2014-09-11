@@ -20,12 +20,18 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     picture: { type: String, default: '' },
-    user_id: { type: Number, index: { unique: true } },
+    created:  {type: Date, default: Date},
+    user_id: { type: String, unique: true, 'default': ''},
+  },
+  payment: {
+    _id:  { type: String },
   },
 
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
+
+
 
 
 /**

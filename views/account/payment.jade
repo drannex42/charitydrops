@@ -2,6 +2,9 @@ extends ../layout
 
 block content
     center
-            h3 Payment Information
+        h3 Payment Information
 
-    
+        form(action='/charge', method='POST')
+         script.stripe-button(src='https://checkout.stripe.com/checkout.js', data-key='pk_test_BWIL5e8gA3a4UMRrcYat1flV', data-image='/square-image.png', data-name='Demo Site', data-description='2 widgets ($20.00)', data-amount='2000')
+      
+

@@ -2,7 +2,7 @@ extends ../layout
 
 block content
       .page-header
-                h3 Profile Information #{user.profile.user_id}
+                h3 Profile Information #{user.profile.user_id} #{user.payment._id}
 
         
       form.form-horizontal(action='/account/profile', method='POST')
