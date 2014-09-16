@@ -221,7 +221,7 @@ app.use(errorHandler());
  */
 
 app.listen(app.get('port'), function() {
-  console.log('Welcome to the year %d, your wibbly-wobbly machine is currently in %s mode, now how do I turn the brakes off again?!?', app.get('port'), app.get('env'));
+  console.log('Hi! Your shit is located on port %d', app.get('port'), app.get('env'));
 });
 
 module.exports = app;
