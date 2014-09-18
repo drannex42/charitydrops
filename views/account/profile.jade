@@ -2,8 +2,8 @@ extends ../layout
 
 block content
       centerbox
-          .page-header
-                    h3 Profile Information
+          .page-header 
+                    h3 Account Information
 
 
           form.form-horizontal.centered(action='/account/profile', method='POST')
@@ -29,7 +29,7 @@ block content
               label.col-sm-2.control-label(for='facebook') Facebook:
               .col-sm-4
                 if user.facebook
-                    a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                    a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank')
                         i.fa.fa-facebook
                         | Connected to: #{user.profile.name}
                   else

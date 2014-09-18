@@ -44,7 +44,8 @@
               if user.profile.picture
                 img(src='#{user.profile.picture}', style='border-radius: 50%;')
               else
-              | Hi, #{user.profile.name || user.email || user.id}!&nbsp
+              | Hi, #{user.profile.name || user.email || user.id}!&nbsp 
+              span.ion-chevron-down
             ul.dropdown-menu
               li
                 a(href='/account')
