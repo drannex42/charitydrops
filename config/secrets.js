@@ -50,7 +50,7 @@ module.exports = {
   },
 
   instagram: {
-    clientID: process.env.INSTAGRAM_ID || 'helo',
+    clientID: process.env.INSTAGRAM_ID || 'hello',
     clientSecret: process.env.INSTAGRAM_SECRET || 'hello',
     callbackURL: '/auth/instagram/callback',
     passReqToCallback: true
@@ -109,7 +109,7 @@ module.exports = {
     clientId: process.env.FOURSQUARE_ID || 'hello',
     clientSecret: process.env.FOURSQUARE_SECRET || 'hello',
     redirectUrl: process.env.FOURSQUARE_REDIRECT_URL || '/auth/foursquare/callback'
-  },
+   },
 
   venmo: {
     clientId: process.env.VENMO_ID || 'hello',

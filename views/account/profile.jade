@@ -1,47 +1,45 @@
 extends ../layout
 
 block content
-      centerbox
-          .page-header 
-                    h3 Account Information
+    center
+      .page-header 
+                h3 Account Information
 
+    div(style='')
+      form.form-horizontal(action='/account/profile', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-1.control-label(for='email') Email
+          .col-sm-4
+            input.form-control(type='email', name='email', id='email', value='#{user.email}')
+        .form-group
+          label.col-sm-1.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
 
-          form.form-horizontal.centered(action='/account/profile', method='POST')
-            input(type='hidden', name='_csrf', value=_csrf)
-            .form-group
-              label.col-sm-2.control-label(for='email') Email
-              .col-sm-4
-                input.form-control(type='email', name='email', id='email', value='#{user.email}')
-            .form-group
-              label.col-sm-2.control-label(for='name') Name
-              .col-sm-4
-                input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-
-            .form-group
-              label.col-sm-2.control-label(for='location') Location
-              .col-sm-4
-                input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-            .form-group
-              label.col-sm-2.control-label(for='website') Website
-              .col-sm-4
-                input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-            .form-group
-              label.col-sm-2.control-label(for='facebook') Facebook:
-              .col-sm-4
-                if user.facebook
-                    a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank')
-                        i.fa.fa-facebook
-                        | Connected to: #{user.profile.name}
-                  else
-                    a.btn.btn-block.btn-sm-facebook.btn-social(href='/auth/facebook')
-                        i.fa.fa-facebook
-                        | Sign in with Facebook
-
-            .form-group
-              .col-sm-6
-                a.btn.btn-block.btn-green.btn-social(type='submit')
-                  span.ion-edit
-                  | Update Profile
+        .form-group
+          label.col-sm-1.control-label(for='location') Location
+          .col-sm-4
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+        .form-group
+          label.col-sm-1.control-label(for='website') Website
+          .col-sm-4
+            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+        .form-group
+          label.col-sm-1.control-label(for='facebook') Facebook:
+          .col-sm-4
+            if user.facebook
+                a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank')
+                    i.fa.fa-facebook
+                    | Connected to: #{user.profile.name}
+              else
+                a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                    i.fa.fa-facebook
+                    | Sign in with Facebook
+        .form-group
+          .col-sm-5(style='margin-left: 27%;')
+            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:right;')
+              | Update Profile
 
         //
           .page-header
@@ -50,11 +48,11 @@ block content
           form.form-horizontal(action='/account/password', method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
-              label.col-sm-2.control-label(for='password') New Password
+              label.col-sm-1.control-label(for='password') New Password
               .col-sm-4
                 input.form-control(type='password', name='password', id='password')
             .form-group
-              label.col-sm-2.control-label(for='confirmPassword') Confirm Password
+              label.col-sm-1.control-label(for='confirmPassword') Confirm Password
               .col-sm-4
                 input.form-control(type='password', name='confirmPassword', id='confirmPassword')
             .form-group
@@ -114,7 +112,7 @@ block content
                     | Sign in with Google
 
     //.form-group
-          label.col-sm-2.control-label(for='gender') Gender
+          label.col-sm-1.control-label(for='gender') Gender
           .col-sm-
             label.radio
               input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')

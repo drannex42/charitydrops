@@ -40,19 +40,26 @@ a {
 
 .navbar-default,
 .navbar-inverse {
-  background: rgba(255, 255, 255, 0.90);
-  border-color: rgba(238,238,238,0.90);
+  background:rgba(255, 255, 255, 0.90);
+  border-color: transparent;
+
 
   .navbar-brand {
     color: #007aff;
     font-family: 'Pacifico', cursive;
     font-size:20px;
   }
+    
+  .navbar-brand-home {
+    color: #007aff;
+    font-family: 'Pacifico', cursive;
+    font-size:30px;
+  }
   
 
   .navbar-nav {
     > li > a {
-      color: #999;
+      color: #007aff;
       transition: all 0.3s;
       &:hover,
       &:focus {
@@ -294,9 +301,7 @@ a {
 
   &:hover,
   &.active {
-    background: transparent;
-    color: #007aff;
-    border-color: #007aff;
+    background: #007aff;
   }
 }
 
@@ -713,12 +718,12 @@ span {
 // Forms =================================================================
 .form-horizontal .control-label {
   text-align: left;
+  margin-left: 27%;
 }
 
 .form-control {
   transition: all 0.4s;
   box-shadow: none;
-
   &:focus {
     border-color: #007aff;
     box-shadow: none;

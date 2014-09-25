@@ -24,7 +24,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
-
 /**
  * Controllers (route handlers).
  */
@@ -55,7 +54,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Make sure MongoDB is running.');
+  console.error('MongoDB Connection Error. Make sure MongoDB is running. = True, then you fucked up.');
 });
 
 var hour = 3600000;
@@ -192,22 +191,24 @@ app.get('/privacy', function(req, res){
  * OAuth sign-in routes.
  */
 
-app.get('/auth/instagram', passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/dashboard');
-});
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/dashboard');
-});
-app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/dashboard');
-});
-app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/dashboard');
-});
+ app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
+      res.redirect(req.session.returnTo || '/dashboard');
+    });
+/**
+    app.get('/auth/instagram', passport.authenticate('instagram'));
+    app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+      res.redirect(req.session.returnTo || '/dashboard');
+    });
+    app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
+    app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
+      res.redirect(req.session.returnTo || '/dashboard');
+    });
+    app.get('/auth/twitter', passport.authenticate('twitter'));
+    app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
+      res.redirect(req.session.returnTo || '/dashboard');
+    });
+*/
 
 
 /**
