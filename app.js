@@ -118,8 +118,6 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
-
-
 /**
  * Main routes.
  */
