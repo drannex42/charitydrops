@@ -23,9 +23,6 @@ var userSchema = new mongoose.Schema({
     created:  {type: Date, default: Date},
     user_id: { type: String, unique: true, 'default': ''},
   },
-  payment: {
-    _id:  { type: String },
-  },
 
   resetPasswordToken: String,
   resetPasswordExpires: Date
@@ -65,6 +62,10 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
+};
+
+userSchema.methods.findAndModify = function (query, sort, doc, options, callback) {
+  return this.collection.findAndModify(query, sort, doc, options, callback);
 };
 
 

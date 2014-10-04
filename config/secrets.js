@@ -18,7 +18,7 @@
 
 module.exports = {
 
-  db: process.env.MONGODB|| 'mongodb://localhost/db/test',
+  db: process.env.MONGODB|| 'mongodb://localhost/charitydrops',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
@@ -26,7 +26,7 @@ module.exports = {
     user: process.env.MAILGUN_USER || 'postmaster@sandbox697fcddc09814c6b83718b9fd5d4e5dc.mailgun.org',
     password: process.env.MAILGUN_PASSWORD || '29eldds1uri6'
   },
-  
+
   mandrill: {
     user: process.env.MANDRILL_USER || 'hackathonstarterdemo',
     password: process.env.MANDRILL_PASSWORD || 'E1K950_ydLR4mHw12a0ldA'
@@ -43,8 +43,8 @@ module.exports = {
 
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '1513341008910186',
-    clientSecret: process.env.FACEBOOK_SECRET || '72cdc7b5cf7d90fd98f41e7495f3a199',
+    clientID: process.env.FACEBOOK_ID || 'UPDATE THESE',
+    clientSecret: process.env.FACEBOOK_SECRET || 'UPDATE THESE',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },

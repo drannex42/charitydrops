@@ -44,7 +44,7 @@ var passportConf = require('./config/passport');
 
 var app = express();
 
-// favicon 
+// favicon
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
@@ -122,7 +122,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  * Main routes.
  */
 
- 
+
 
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
@@ -185,6 +185,28 @@ app.get('/privacy', function(req, res){
  });
 
 
+var User = require('./models/User');
+
+/* Adding payment to db */
+app.post('/charge', function(req, res){
+    User.update({_id: req.user._id}, {
+        tokens:{
+            stripe: {
+                token: req.body.stripeToken,
+                tokenType: req.body.stripeTokenType,
+                email: req.body.stripeEmail
+            }
+        }
+    }, function(err, user) {
+        if (err) console.log(err);
+        console.log('Stripe details added successfully.');
+        // Change this to render the you've done good page. <3
+        // Good luck with this.
+        res.render('account/payment', {
+            title: 'Payment'
+        });
+    });
+});
 
 
 /**
