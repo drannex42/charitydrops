@@ -33,6 +33,7 @@
 
   @media (min-width: @grid-float-breakpoint) {
     float: left;
+      
   }
 }
 
@@ -64,6 +65,7 @@
     width: auto;
     border-top: 0;
     box-shadow: none;
+    
 
     &.collapse {
       display: block !important;
@@ -193,7 +195,7 @@
   margin-right: @navbar-padding-horizontal;
   padding: 9px 10px;
   .navbar-vertical-align(34px);
-  background-color: transparent;
+  background-color: white;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   border-radius: @border-radius-base;
@@ -242,7 +244,7 @@
       float: none;
       width: auto;
       margin-top: 0;
-      background-color: transparent;
+      background-color: white;
       border: 0;
       box-shadow: none;
       > li > a,
@@ -266,6 +268,7 @@
 
     > li {
       float: left;
+        background:white;
       > a {
         padding-top:    @navbar-padding-vertical;
         padding-bottom: @navbar-padding-vertical;

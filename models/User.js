@@ -21,7 +21,6 @@ var userSchema = new mongoose.Schema({
     website: { type: String, default: '' },
     picture: { type: String, default: '' },
     created:  {type: Date, default: Date},
-    user_id: { type: String, unique: true, 'default': ''},
   },
 
   resetPasswordToken: String,

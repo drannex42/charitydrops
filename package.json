@@ -67,6 +67,7 @@
   "devDependencies": {
     "blessed": "^0.0.37",
     "chai": "^1.9.1",
+    "colors.css": "^1.0.0",
     "mocha": "^1.21.4",
     "multiline": "^0.3.4",
     "supertest": "^0.13.0"

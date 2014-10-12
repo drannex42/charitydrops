@@ -13,7 +13,7 @@ var secrets = require('../config/secrets');
 
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/login', {
+  res.render('login/login', {
     title: 'Login'
   });
 };
@@ -69,7 +69,7 @@ exports.logout = function(req, res) {
 
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/signup', {
+  res.render('login/signup', {
     title: 'Create Account'
   });
 };
@@ -119,8 +119,8 @@ exports.postSignup = function(req, res, next) {
  */
 
 exports.getAccount = function(req, res) {
-  res.render('account/profile', {
-    title: 'Account Management'
+  res.render('account/account', {
+    title: 'Account Information'
   });
 };
 
@@ -147,7 +147,7 @@ exports.postUpdateProfile = function(req, res, next) {
 };
 
 /**
- * POST /account/password
+ * POST /login/password
  * Update current password.
  * @param password
  */
@@ -229,7 +229,7 @@ exports.getReset = function(req, res) {
         req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
         return res.redirect('/forgot');
       }
-      res.render('account/reset', {
+      res.render('login/reset', {
         title: 'Password Reset'
       });
     });
@@ -310,7 +310,7 @@ exports.getForgot = function(req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
-  res.render('account/forgot', {
+  res.render('login/forgot', {
     title: 'Forgot Password'
   });
 };

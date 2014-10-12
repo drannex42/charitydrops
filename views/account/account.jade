@@ -5,18 +5,32 @@ block content
       .page-header 
                 h3 Account Information
 
-    div(style='')
+    div
       form.form-horizontal(action='/account/profile', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
+        
+        .form-group
+          label.col-sm-1.control-label Payment
+          .col-sm-4(style='text-align:center;')
+            a(href='/account/payment/')
+                i.ion-card
+                | To change payment information, click here.
+        .form-group
+          label.col-sm-1.control-label(for='facebook') Name
+          .col-sm-4
+            if user.facebook
+                a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank' style='margin:0;')
+                    i.fa.fa-facebook
+                    | #{user.profile.name}
+              else
+                a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                    i.fa.fa-facebook
+                    | Sign in with Facebook
+        
         .form-group
           label.col-sm-1.control-label(for='email') Email
           .col-sm-4
             input.form-control(type='email', name='email', id='email', value='#{user.email}')
-        .form-group
-          label.col-sm-1.control-label(for='name') Name
-          .col-sm-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-
         .form-group
           label.col-sm-1.control-label(for='location') Location
           .col-sm-4
@@ -26,20 +40,10 @@ block content
           .col-sm-4
             input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
         .form-group
-          label.col-sm-1.control-label(for='facebook') Facebook:
-          .col-sm-4
-            if user.facebook
-                a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank')
-                    i.fa.fa-facebook
-                    | Connected to: #{user.profile.name}
-              else
-                a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-                    i.fa.fa-facebook
-                    | Sign in with Facebook
-        .form-group
-          .col-sm-5(style='margin-left: 27%;')
-            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:right;')
+          label.col-sm-5.control-label
+            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
               | Update Profile
+              
 
         //
           .page-header

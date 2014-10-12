@@ -18,7 +18,7 @@
 
 module.exports = {
 
-  db: process.env.MONGODB|| 'mongodb://localhost/charitydrops',
+  db: process.env.MONGODB|| 'mongodb://localhost/test/db',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
@@ -43,8 +43,8 @@ module.exports = {
 
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'UPDATE THESE',
-    clientSecret: process.env.FACEBOOK_SECRET || 'UPDATE THESE',
+    clientID: process.env.FACEBOOK_ID || '1513341008910186',
+    clientSecret: process.env.FACEBOOK_SECRET || '72cdc7b5cf7d90fd98f41e7495f3a199',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
@@ -96,7 +96,7 @@ module.exports = {
   },
 
   stripe: {
-    apiKey: process.env.STRIPE_KEY || 'hello'
+    apiKey: process.env.STRIPE_KEY || 'sk_test_JULgftCMYTMqPk9UcgYyaxXy'
   },
 
   tumblr: {
