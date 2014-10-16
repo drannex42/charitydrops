@@ -1,24 +1,10 @@
 /**
- * IMPORTANT * IMPORTANT * IMPORTANT * IMPORTANT * IMPORTANT * IMPORTANT *
- *
- * You should never commit this file to a public repository on GitHub!
- * All public code on GitHub can be searched, that means anyone can see your
- * uploaded secrets.js file.
- *
- * I did it for your convenience using "throw away" credentials so that
- * all features could work out of the box.
- *
- * Untrack secrets.js before pushing your code to public GitHub repository:
- *
- * git rm --cached config/secrets.js
- *
- * If you have already commited this file to GitHub with your keys, then
- * refer to https://help.github.com/articles/remove-sensitive-data
+ * LOCAL-TESTING
 */
 
 module.exports = {
 
-  db: process.env.MONGODB|| 'mongodb://localhost/test/db',
+  db: process.env.MONGODB|| 'mongodb://localhost/test/db3',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
@@ -43,8 +29,8 @@ module.exports = {
 
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '1513341008910186',
-    clientSecret: process.env.FACEBOOK_SECRET || '72cdc7b5cf7d90fd98f41e7495f3a199',
+    clientID: process.env.FACEBOOK_ID || '1525261901051430',
+    clientSecret: process.env.FACEBOOK_SECRET || 'c1c5808e3486ef2aa633acb14e6d1cd7',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },

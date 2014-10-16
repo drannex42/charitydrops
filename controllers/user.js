@@ -14,7 +14,7 @@ var secrets = require('../config/secrets');
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('login/login', {
-    title: 'Login'
+    title: 'Login | '
   });
 };
 
@@ -70,7 +70,7 @@ exports.logout = function(req, res) {
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('login/signup', {
-    title: 'Create Account'
+    title: 'Create Account | '
   });
 };
 
@@ -120,7 +120,7 @@ exports.postSignup = function(req, res, next) {
 
 exports.getAccount = function(req, res) {
   res.render('account/account', {
-    title: 'Account Information'
+    title: 'Account Information | '
   });
 };
 
@@ -133,8 +133,6 @@ exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
     user.email = req.body.email || '';
-    user.profile.name = req.body.name || '';
-    user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
 
