@@ -1,10 +1,10 @@
 /**
- * PRODUCTION 
+ * LOCAL-TESTING
 */
 
 module.exports = {
 
-  db: process.env.MONGODB|| 'mongodb://localhost/test/db',
+  db: process.env.MONGODB|| 'mongodb://localhost/test/db3',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
@@ -29,8 +29,8 @@ module.exports = {
 
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '1513341008910186',
-    clientSecret: process.env.FACEBOOK_SECRET || '72cdc7b5cf7d90fd98f41e7495f3a199',
+    clientID: process.env.FACEBOOK_ID || '1525261901051430',
+    clientSecret: process.env.FACEBOOK_SECRET || 'c1c5808e3486ef2aa633acb14e6d1cd7',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
