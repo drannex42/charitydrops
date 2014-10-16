@@ -3,14 +3,8 @@ extends ../layout
 
 
 block content
-    center
-        h1 Welcome back, #{user.profile.name || user.email || user.id}!&nbsp 
-    div.container-fluid
-      div.row-fluid
-        div.span2
-          | Inserted
-        div.span10
-          | Hello World
+    div(style='color:blue;')
+        Welcome back, #{user.profile.name || user.email || user.id}!&nbsp 
 
         
             
