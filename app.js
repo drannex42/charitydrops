@@ -46,7 +46,7 @@ var app = express();
 
 // favicon
 
-app.use(favicon(__dirname + '/public/favicon.png'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 /**
  * Connect to MongoDB.
