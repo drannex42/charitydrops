@@ -5,11 +5,12 @@ block content
                 center
                     .page-header 
                         h3 Change Payment Information
+                        h3(style='color:red;') CURRENTLY PAYMENTS DO NOT WORK. WE ARE LOOKING INTO THIS.
                 .row
                     .col-md-4
                     .col-md-4
                       script(src='https://js.stripe.com/v2/', type='text/javascript')
-                      form#payment-form.require-validation(accept-charset='UTF-8', action='/', data-cc-on-file='false', data-stripe-publishable-key='sk_test_JULgftCMYTMqPk9UcgYyaxXy', method='post')
+                      form#payment-form.require-validation(accept-charset='UTF-8', action='/', data-cc-on-file='false', data-stripe-publishable-key='sk_test_JULgftCMYTMqPk9UcgYyaxXy', method='post',disabled)
                         div(style='margin: 0; padding: 0; display: inline;')
                           input(name='utf8', type='hidden', value='✓')
                           input(name='_method', type='hidden', value='PUT')
