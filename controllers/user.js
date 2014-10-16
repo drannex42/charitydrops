@@ -132,7 +132,6 @@ exports.getAccount = function(req, res) {
 exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
-    user.profile.name = req.body.name || '';
     user.email = req.body.email || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';

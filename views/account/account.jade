@@ -9,10 +9,6 @@ block content
       form.form-horizontal(action='/account/profile', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-          label.col-sm-2.control-label(for='name') Name
-          .col-sm-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-        .form-group
           label.col-sm-1.control-label Payment
           .col-sm-4(style='text-align:center;')
             a(href='/account/payment/')
