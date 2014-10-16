@@ -9,6 +9,10 @@ block content
       form.form-horizontal(action='/account/profile', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
+          label.col-sm-2.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        .form-group
           label.col-sm-1.control-label Payment
           .col-sm-4(style='text-align:center;')
             a(href='/account/payment/')
@@ -42,15 +46,9 @@ block content
           label.col-sm-5.control-label
             button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
               | Update Profile
-        .page-header
-            h3 Delete Account
-              p You can delete your account, but keep in mind this action is irreversible.
-              form(action='/account/delete', method='POST')
-                input(type='hidden', name='_csrf', value=_csrf)
-                button.btn.btn-danger(type='submit')
-                  span.ion-trash-b
-                  | Delete my account
-        //   
+              
+
+        //
           .page-header
             h3 Change Password
 
@@ -69,6 +67,16 @@ block content
                 button.btn.btn.btn-primary(type='submit')
                   span.ion-locked
                   | Change Password
+
+          .page-header
+            h3 Delete Account
+
+          p You can delete your account, but keep in mind this action is irreversible.
+          form(action='/account/delete', method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            button.btn.btn-danger(type='submit')
+              span.ion-trash-b
+              | Delete my account
 
           .page-header
             h3 Linked Accounts
