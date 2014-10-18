@@ -157,7 +157,7 @@ app.get('/account/payment',  passportConf.isAuthenticated, function(req, res){
 /* dashboard */
 app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
   res.render('dashboard/home', {
-    title: 'Dashboard' });
+    title: 'Dashboard | ' });
  });
 
 
@@ -178,16 +178,16 @@ app.get('/action', function(req, res){
 /* Footer Links */
 app.get('/blog', function(req, res){
   res.render('home/blog', {
-    title: 'blog' }); });
+    title: 'Blog | ' }); });
 
 app.get('/team', function(req, res){
   res.render('home/team', {
-    title: 'team' });
+    title: 'Team | ' });
  });
 
 app.get('/privacy', function(req, res){
   res.render('home/privacy', {
-    title: 'privacy policy' });
+    title: 'Privacy Policy | ' });
  });
 
 
