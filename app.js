@@ -48,6 +48,12 @@ var app = express();
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
+
+// set up a route to redirect http to https
+http.get('*',function(req,res){  
+    res.redirect('https://charitydrops.org'+req.url)
+})
+
 /**
  * Connect to MongoDB.
  */
@@ -203,7 +209,7 @@ app.post('/charge', function(req, res){
         // Change this to render the you've done good page. <3
         // Good luck with this.
         res.render('account/payment', {
-            title: 'Payment'
+            title: 'Payment '
         });
     });
 });
