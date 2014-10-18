@@ -49,11 +49,13 @@ var app = express();
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
-// set up a route to redirect http to https
-http.get('*',function(req,res){  
-    res.redirect('https://charitydrops.org'+req.url)
-})
-
+require("http").createServer(function(req, res){
+     res.writeHead(301, {
+       'Content-Type': 'text/plain', 
+       'Location':'https://'+req.headers.host+req.url
+     res.end('Redirecting to SSL\n');
+  }).listen(80);
+    
 /**
  * Connect to MongoDB.
  */
