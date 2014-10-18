@@ -47,8 +47,6 @@ var passportConf = require('./config/passport');
 
 var app = express();
 
-// use HTTPS(true) in case you are behind a load balancer (e.g. Heroku)
-app.use(enforce.HTTPS());
 
 // favicon
 
