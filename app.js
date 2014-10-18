@@ -3,7 +3,9 @@
  */
 
 var express = require('express');
+var enforce = require('express-sslify');
 var favicon = require('serve-favicon');
+
 
 
 var cookieParser = require('cookie-parser');
@@ -44,16 +46,13 @@ var passportConf = require('./config/passport');
 
 var app = express();
 
+// use HTTPS(true) in case you are behind a load balancer (e.g. Heroku)
+app.use(enforce.HTTPS());
+
 // favicon
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-
-require("http").createServer(function(req, res){
-     res.writeHead(301, {
-       'Content-Type': 'text/plain', 
-       'Location':'https://'+req.headers.host+req.url
-  }).listen(80);
     
 /**
  * Connect to MongoDB.

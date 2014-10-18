@@ -24,6 +24,7 @@
     "express": "^4.8.4",
     "express-flash": "^0.0.2",
     "express-session": "^1.7.5",
+    "express-sslify": "^0.1.0",
     "express-validator": "^2.3.0",
     "fbgraph": "^0.2.10",
     "fs-tools": "^0.2.11",
