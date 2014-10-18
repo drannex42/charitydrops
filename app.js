@@ -165,12 +165,12 @@ app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
 
 app.get('/charities', function(req, res){
   res.render('home/charities', {
-    title: 'Charities'  });
+    title: 'Charities | '  });
 });
 
 app.get('/action', function(req, res){
   res.render('action/home', {
-    title: 'Action Center'  });
+    title: 'Action Center | '  });
 });
 
 
