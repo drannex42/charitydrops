@@ -51,7 +51,7 @@ var app = express();
 
 // favicon
 
-app.use(favicon(__dirname + '/public/raindrop.png'));
+app.use(favicon(__dirname + '/public/raindrop-icon.png'));
 
     
 /**
