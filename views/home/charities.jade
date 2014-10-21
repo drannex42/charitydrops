@@ -5,22 +5,22 @@ extends ../layout
 block content
     h1 Charities
 
-     div
-          form.form-horizontal(action='/charities', method='POST')
-            input(type='hidden', name='_csrf', value=_csrf)
-            .form-group
-              label.col-sm-1.control-label(for='charitydrops') Test1
-              .col-sm-4
-                input.form-control(type='charitydrops', name='charitydrops', id='charitydrops', value='{user.charitydrops}')
-            .form-group
-              label.col-sm-1.control-label(for='location') Location
-              .col-sm-4
-                input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-            .form-group
-              label.col-sm-1.control-label(for='website') Website
-              .col-sm-4
-                input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-            .form-group
-              label.col-sm-5.control-label
-                button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
-                  | Update Profile
+ div
+      form.form-horizontal(action='/charities', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-1.control-label(for='charitydrops') Test1
+          .col-sm-4
+            input.form-control(type='charitydrops', name='charitydrops', id='charitydrops', value='#{user.charities.charitydrops}')
+        .form-group
+          label.col-sm-1.control-label(for='location') Location
+          .col-sm-4
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+        .form-group
+          label.col-sm-1.control-label(for='website') Website
+          .col-sm-4
+            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+        .form-group
+          label.col-sm-5.control-label
+            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
+              | Update Profile
