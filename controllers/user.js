@@ -74,6 +74,7 @@ exports.getSignup = function(req, res) {
   });
 };
 
+
 /**
  * POST /signup
  * Create a new local account.
@@ -144,6 +145,16 @@ exports.postUpdateProfile = function(req, res, next) {
   });
 };
 
+/**
+ * GET /charities
+ * Profile page.
+ */
+
+exports.getCharities = function(req, res) {
+  res.render('home/charities', {
+    title: 'Charities | '
+  });
+};
 
 /**
  * POST /charities
@@ -160,7 +171,7 @@ exports.postUpdateCharities = function(req, res, next) {
     user.save(function(err) {
       if (err) return next(err);
       req.flash('success', { msg: ' updated.' });
-      res.redirect('/');
+      res.redirect('/charities');
     });
   });
 };
