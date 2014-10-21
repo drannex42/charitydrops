@@ -150,7 +150,7 @@ exports.postUpdateProfile = function(req, res, next) {
  * Update charity information.
  */
 
-exports.postUpdateCharities = function(req, res, next) {
+exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
     user.charities.charitydrops = req.body.charitydrops || '';
