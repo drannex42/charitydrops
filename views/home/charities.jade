@@ -14,8 +14,17 @@ block content
               input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
               span Not Donating
             label.radio
-              input(type='radio', checked=user.charities.donatecheck=='female', name='donatecheck', value='1', data-toggle='radio')
+              input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
               span Donating
+        .form-group
+          label.col-sm-2.control-label(for='gender') Gender
+          .col-sm-4
+            label.radio
+              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+              span Male
+            label.radio
+              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+              span Female
         .form-group
           label.col-sm-1.control-label(for='location') Location
           .col-sm-4
