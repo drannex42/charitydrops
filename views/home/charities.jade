@@ -4,8 +4,7 @@ extends ../layout
 
 block content
     h1 Charities
-
- div
+    div
       form.form-horizontal(action='/charities', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
