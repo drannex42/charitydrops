@@ -23,6 +23,24 @@ var userSchema = new mongoose.Schema({
     created:  {type: Date, default: Date},
   },
 
+  charities: {
+/**
+ * 0 = False
+ * 1 = True
+ */
+    charitydrops: { type: String, default: '0' },
+    unicef: { type: String, default: '0' },
+    waterorg: { type: String, default: '0' },
+    plannedparenthood: { type: String, default: '0' },
+    hrc: { type: String, default: '0' },
+    wwf: { type: String, default: '0' },
+    stjude: { type: String, default: '0' },
+    redcross: { type: String, default: '0' },
+    breastcancer: { type: String, default: '0' },
+      
+    donatecheck: { type: String, default: '0' },
+  },
+
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
