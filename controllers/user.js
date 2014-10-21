@@ -145,34 +145,6 @@ exports.postUpdateProfile = function(req, res, next) {
   });
 };
 
-/**
- * GET /charities
- * Profile page.
- */
-
-exports.getCharities = function(req, res) {
-  res.render('home/charities', {
-    title: 'Charities | '
-  });
-};
-
-/**
- * POST /charities
- * Update charity information.
- */
-
-exports.postUpdateCharities = function(req, res, next) {
-  User.findById(req.user.id, function(err, user) {
-    if (err) return next(err);
-    user.charities.donatecheck = req.body.donatecheck || '';
-
-    user.save(function(err) {
-      if (err) return next(err);
-      req.flash('success', { msg: ' updated.' });
-      res.redirect('/charities');
-    });
-  });
-};
 
 /**
  * POST /login/password
