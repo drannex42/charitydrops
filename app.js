@@ -163,7 +163,7 @@ app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
 
 /* navbar */
 
-app.get('/charities', function(req, res){
+app.get('/charities', userController.postUpdateCharities, function(req, res){
   res.render('home/charities', {
     title: 'Charities | '  });
 });

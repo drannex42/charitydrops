@@ -150,7 +150,7 @@ exports.postUpdateProfile = function(req, res, next) {
  * Update charity information.
  */
 
-exports.postUpdateProfile = function(req, res, next) {
+exports.postUpdateCharities = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
     user.charities.charitydrops = req.body.charitydrops || '';
@@ -159,7 +159,7 @@ exports.postUpdateProfile = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', { msg: 'updated.' });
+      req.flash('success', { msg: ' updated.' });
       res.redirect('/');
     });
   });
