@@ -164,9 +164,7 @@ exports.getCharities = function(req, res) {
 exports.postUpdateCharities = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
-    user.charities.charitydrops = req.body.charitydrops || '';
-    user.profile.location = req.body.location || '';
-    user.profile.website = req.body.website || '';
+    user.charities.donatecheck = req.body.donatecheck || '';
 
     user.save(function(err) {
       if (err) return next(err);

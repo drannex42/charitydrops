@@ -8,9 +8,14 @@ block content
       form.form-horizontal(action='/charities', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-          label.col-sm-1.control-label(for='charitydrops') Test1
+          label.col-sm-2.control-label(for='donatecheck') test
           .col-sm-4
-            input.form-control(type='text', name='charitydrops', id='charitydrops', value='#{user.charities.charitydrops}')
+            label.radio
+              input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
+              span Not Donating
+            label.radio
+              input(type='radio', checked=user.charities.donatecheck=='female', name='donatecheck', value='1', data-toggle='radio')
+              span Donating
         .form-group
           label.col-sm-1.control-label(for='location') Location
           .col-sm-4
