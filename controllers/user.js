@@ -136,7 +136,8 @@ exports.postUpdateProfile = function(req, res, next) {
     user.email = req.body.email || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
-
+    user.charities.donatecheck = req.body.donatecheck || '';
+      
     user.save(function(err) {
       if (err) return next(err);
       req.flash('success', { msg: 'Profile information updated.' });
