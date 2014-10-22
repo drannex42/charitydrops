@@ -2,20 +2,24 @@ extends homelayout
 
 block content
     if !user
-        //video#bgvid(autoplay='true', loop='true', poster='http://upload.wikimedia.org/wikipedia/commons/5/52/AVE-Bridge-00.gif')
-            source(src='/video/bg.mp4', type='video/mp4')
-        header
-            center
-                h1 Let's make the world better. 
-                | <br><br>
-                a.button.btn.btn.btn-primary(href='/auth/facebook')
-                        | Register with Facebook
-                | <br><br>
-                a(href='#learnmore')
-                    | Learn more about how it works
-        
-        
+            section#intro
+              .container
+                    center
+                        h1 Let's make the world better.
+                        | <br><br>
+                        a.button.btn.btn.btn-primary(href='/auth/facebook')
+                                | Register with Facebook
+                        | <br><br>
+                        a(href='#learnmore')
+                            | Learn more about how it works
+            // Section 2
+            section#learnmore
+              .container
+                    center
+                        h3 Something will go here later
+                            img(src='/img/raindrop.png')
     else 
         if user.user
         script.
             window.location = "/dashboard"
+

@@ -1,5 +1,3 @@
-
-
 body {
     background:#007aff;
 }
@@ -10,8 +8,46 @@ header {
   color:white;
 }
 
+.navbar-default,
+.navbar-inverse {
+  padding-bottom: 8px;
+}
+
+.navbar-nav > li > a:hover {
+    border-bottom: 6px solid white;
+}
+
+/* additional sections */
+
+#intro {
+    color: white;
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding-top: 10%;
+    padding-bottom:20%;
+}
+#learnmore {
+    background: white 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+#about {
+    background: white 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 100px 0;
+    color: #fff;
+}
+
+
 .navbar-default{
-  background:transparent;
+  background: #007aff;
   border-color: transparent;
 
 }
@@ -24,7 +60,7 @@ font-size: 30px;
 .navbar-default .navbar-brand:hover, .navbar-inverse .navbar-brand:hover {
 -webkit-animation: wobble 1s;
     color:white;
-border-bottom: 4px solid #000000;
+    border-bottom: transparent;
     transition: all 0.3s;
 }
 
@@ -40,7 +76,6 @@ color: white;
 background-color: white;
 border-color: #357ebd;
 color:#007aff;
-
 -webkit-animation: rotateIn 2s;
 }
 
@@ -72,14 +107,17 @@ a {
 
 a:hover {
     color:white;
-    border-bottom: 6px solid white;
     transition: all 0.3s;
+
 }
 
 footer {
     color:white;
 }
 
-footer:hover {
+
+
+footer a:hover {
     color:white;
+    border-bottom: 6px solid white;
 }
