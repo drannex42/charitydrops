@@ -18,7 +18,7 @@ block content
           label.col-sm-2.control-label(for='donatecheck') Monthly Donations
           .col-sm-4
             label.radio
-              input(type='radio', checked=user.charities.donatecheck=='', name='donatecheck', value='1', data-toggle='radio')
+              input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
               span Yes, I am currently donating monthly
             label.radio
               input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
