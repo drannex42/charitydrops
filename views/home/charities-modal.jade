@@ -1,0 +1,14 @@
+          div
+              form.form-horizontal(action='/charities', method='POST')
+                input(type='hidden', name='_csrf', value=_csrf)
+                .form-group
+                    label.radio(style="color:green;vertical-align: top;")
+                      input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
+                      span Yes, I am currently donating monthly
+                    label.radio(style="color:red;vertical-align: top;")
+                      input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
+                      span No, I am opting out of donating monthly
+                .form-group
+                  label.col-sm-5.control-label
+                    button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
+                      | Update Profile

@@ -1,93 +1,108 @@
 extends ../layout
 
-
-
 block content
-    .container
-      // Page Heading
-      .row
-        .col-lg-12
-          h1.page-header
-            | Charities
-      // /.row
-      // Charity One
-      .row
-        .col-md-7
-          a(href='#')
-            img.img-responsive(src='http://placehold.it/700x300', alt='')
-        .col-md-5
-          h3 Charity One
-          h4 Subheading
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.
-          a.btn.btn-primary(href='#')
-            | View Charity
-
-      // /.row
-      hr
-      // Charity Two
-      .row
-        .col-md-7
-          a(href='#')
-            img.img-responsive(src='http://placehold.it/700x300', alt='')
-        .col-md-5
-          h3 Charity Two
-          h4 Subheading
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.
-          a.btn.btn-primary(href='#')
-            | View Charity
-
-      // /.row
-      hr
-      // Charity Three
-      .row
-        .col-md-7
-          a(href='#')
-            img.img-responsive(src='http://placehold.it/700x300', alt='')
-        .col-md-5
-          h3 Charity Three
-          h4 Subheading
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!
-          a.btn.btn-primary(href='#')
-            | View Charity
-
-      // /.row
-      hr
-      // Charity Four
-      .row
-        .col-md-7
-          a(href='#')
-            img.img-responsive(src='http://placehold.it/700x300', alt='')
-        .col-md-5
-          h3 Charity Four
-          h4 Subheading
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?
-          a.btn.btn-primary(href='#')
-            | View Charity
-
-      // /.row
-      hr
-      // Charity Five
-      .row
-        .col-md-7
-          a(href='#')
-            img.img-responsive(src='http://placehold.it/700x300', alt='')
-        .col-md-5
-          h3 Charity Five
-          h4 Subheading
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.
-          a.btn.btn-primary(href='#')
-            | View Charity
-
-      // /.row
-      hr
-      // Pagination
-      .row.text-center
-        .col-lg-12
-          ul.pagination
-            li
-              a(href='#') «
+        .container
+          // Page Header
+          .row
+            .col-lg-12
+              h1.page-header
+                | Charities
+            div(style="text-align:right;")
+                a(href="/charities/")
+                | Manage Your Charities
+            // /.row
+          // Projects Row
+          .row
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+                    if user.charities.donatecheck == "1"
+                         span.ion-checkmark-circled(style="color:green;vertical-align: top;")
+                    else
+                         span.ion-close-circled(style="color:red;vertical-align: top;")
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+          // /.row
+          // Projects Row
+          .row
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+          // Projects Row
+          .row
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+            .col-md-4.portfolio-item
+              a(href='#')
+                img.img-responsive(src='http://placehold.it/700x400', alt='')
+              h3
+                a(href='#') Project Name
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+          // /.row
+          hr
+          // Pagination
+          .row.text-center
+            .col-lg-12
+              ul.pagination
+                li
+                  a(href='#') «
+                li.active
+                  a(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') 5
+                li
+                  a(href='#') »
+          // /.row

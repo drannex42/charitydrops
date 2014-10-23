@@ -146,6 +146,34 @@ exports.postUpdateProfile = function(req, res, next) {
   });
 };
 
+/**
+ * GET /account
+ * Profile page.
+ */
+
+exports.getCharities = function(req, res) {
+  res.render('home/charities', {
+    title: 'Charities | '
+  });
+};
+
+/**
+ * POST /account/profile
+ * Update profile information.
+ */
+
+exports.postCharities = function(req, res, next) {
+  User.findById(req.user.id, function(err, user) {
+    if (err) return next(err);
+    user.charities.donatecheck = req.body.donatecheck || '';
+    user.save(function(err) {
+      if (err) return next(err);
+      req.flash('success', { msg: 'Charity information updated.' });
+      res.redirect('/charities');
+    });
+  });
+};
+
 
 /**
  * POST /login/password

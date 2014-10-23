@@ -148,6 +148,10 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 
+app.get('/charities', passportConf.isAuthenticated, userController.getCharities);
+app.post('/charities/', passportConf.isAuthenticated, userController.postCharities);
+
+
 
 /* navbar dropdown */
 app.get('/account/payment',  passportConf.isAuthenticated, function(req, res){
@@ -163,11 +167,6 @@ app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
 
 
 /* navbar */
-
-app.get('/charities', function(req, res){
-  res.render('home/charities', {
-    title: 'Charities | '  });
-});
 
 app.get('/action', function(req, res){
   res.render('action/home', {
