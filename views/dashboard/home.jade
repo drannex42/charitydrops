@@ -3,11 +3,45 @@ extends ../layout
 
 
 block content
-    center
-        h1
-            p Welcome back, #{user.profile.name || user.email || user.id}!&nbsp 
+    .container
+          .row
+            .col-lg-12
+              h2.page-header
+                | Novembers Featured Bundle
+                small  &#8212; The "Beginners Luck Collection"
+                    if user.charities.donatecheck == "1"
+                         span.ion-checkmark-circled(style="color:green;vertical-align: top;")
+                    else
+                         span.ion-close-circled(style="color:red;vertical-align: top;")
+          // /.row
+          // Portfolio Item Row
+          .row
+            .col-md-8
+                    img.img-responsive(src='http://placehold.it/700x300', alt='')
+            .col-md-4
+              h3 The "Beginners Luck Collection"
+              p
+                | Insert a decription of what this bundle is, who it benefits and why its really really fucking awesome..
+              h3 Selected Charities
+              ul
+                li #[a(href="/charities/1") HRC]
+                li #[a(href="/charities/1") American Humane Society]
+                li #[a(href="/charities/1") Human Rights Campain]
+                li #[a(href="/charities/1") CharityDrops]
+            if user.charities.donatecheck == "1"
+                center
+                     span.ion-checkmark-circled(style="color:green;text-align:right;") &nbsp;You are donating to this charity!
+            else
+                center
+                    pre
+                        span.ion-cross-circled(style="color:red;") &nbsp;You are not currently donating, #[a(href="/account/payment" style="text-decoration:underline;") lets change that]
 
-        img(src='/img/raindrop.png')
+          // /.row
+          // Related Projects Row
+          .row
+            .col-lg-12
+              h3 From the Blog
+
             
             
 

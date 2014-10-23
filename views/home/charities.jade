@@ -3,37 +3,91 @@ extends ../layout
 
 
 block content
-    h1 Charities
-    div
-      form.form-horizontal(action='/charities', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .form-group
-          label.col-sm-2.control-label(for='donatecheck') test
-          .col-sm-4
-            label.radio
-              input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
-              span Not Donating
-            label.radio
-              input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
-              span Donating
-        .form-group
-          label.col-sm-2.control-label(for='gender') Gender
-          .col-sm-4
-            label.radio
-              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-              span Male
-            label.radio
-              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-              span Female
-        .form-group
-          label.col-sm-1.control-label(for='location') Location
-          .col-sm-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-sm-1.control-label(for='website') Website
-          .col-sm-4
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          label.col-sm-5.control-label
-            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
-              | Update Profile
+    .container
+      // Page Heading
+      .row
+        .col-lg-12
+          h1.page-header
+            | Charities
+      // /.row
+      // Charity One
+      .row
+        .col-md-7
+          a(href='#')
+            img.img-responsive(src='http://placehold.it/700x300', alt='')
+        .col-md-5
+          h3 Charity One
+          h4 Subheading
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.
+          a.btn.btn-primary(href='#')
+            | View Charity
+
+      // /.row
+      hr
+      // Charity Two
+      .row
+        .col-md-7
+          a(href='#')
+            img.img-responsive(src='http://placehold.it/700x300', alt='')
+        .col-md-5
+          h3 Charity Two
+          h4 Subheading
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.
+          a.btn.btn-primary(href='#')
+            | View Charity
+
+      // /.row
+      hr
+      // Charity Three
+      .row
+        .col-md-7
+          a(href='#')
+            img.img-responsive(src='http://placehold.it/700x300', alt='')
+        .col-md-5
+          h3 Charity Three
+          h4 Subheading
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!
+          a.btn.btn-primary(href='#')
+            | View Charity
+
+      // /.row
+      hr
+      // Charity Four
+      .row
+        .col-md-7
+          a(href='#')
+            img.img-responsive(src='http://placehold.it/700x300', alt='')
+        .col-md-5
+          h3 Charity Four
+          h4 Subheading
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?
+          a.btn.btn-primary(href='#')
+            | View Charity
+
+      // /.row
+      hr
+      // Charity Five
+      .row
+        .col-md-7
+          a(href='#')
+            img.img-responsive(src='http://placehold.it/700x300', alt='')
+        .col-md-5
+          h3 Charity Five
+          h4 Subheading
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.
+          a.btn.btn-primary(href='#')
+            | View Charity
+
+      // /.row
+      hr
+      // Pagination
+      .row.text-center
+        .col-lg-12
+          ul.pagination
+            li
+              a(href='#') «
