@@ -27,7 +27,7 @@
             a(href='/more') Learn More
             
         else
-          li.dropdown(class=title=='Account Management'?'active':undefined)
+          li.dropdown(class=title=='Account Settings'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
                 img(src='#{user.profile.picture}', style='border-radius: 50%;')
@@ -37,21 +37,16 @@
             ul.dropdown-menu
               li
                 a(href='/account')
-                  span.ion-ios7-gear
+                  span.ion-android-settings
                   | Account Settings
-             
-              li
-                a(href='/account/payment')
-                  span.ion-card
-                  | Change Payment Information
               li
                 a(href='/charities/manage')
-                  span.ion-ios7-gear
+                  span.ion-medkit
                   | Manage Charities
               li
-                a(href='/logout')
-                  span.ion-log-out
-                  | Logout
+                    a(href='/logout')
+                      span.ion-power
+                      | Logout
               li
                 center
                     if user.charities.donatecheck == "1"

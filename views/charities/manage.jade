@@ -17,6 +17,8 @@ block content
               td
                 strong
                     p DonateCheck
+                        a(href='#{user.charlinks.hrc}' style='font-size:16px;')
+                            i.ion-information-circled
                 p kfjdsj;fsdkfjslkjdf;lksjdf
 
               td
@@ -33,7 +35,7 @@ block content
                 strong
                     p Human Rights Campaign &nbsp;
                         a(href='#{user.charlinks.hrc}' style='font-size:16px;')
-                            i.ion-share
+                            i.ion-information-circled
                 p The Human Rights Campaign is America's largest civil rights organization working to achieve lesbian, gay, bisexual and transgender equality.
 
               td
@@ -48,9 +50,9 @@ block content
               td 3
               td
                 strong
-                    p World Wildlife Foundation (WWF)
+                    p World Wildlife Foundation (WWF) &nbsp;
                         a(href='#{user.charlinks.wwf}' style='font-size:16px;')
-                            i.ion-share
+                            i.ion-information-circled
                 p The leading organization in wildlife conservation and endangered species
 
               td
@@ -89,7 +91,7 @@ block content
 
 
 
-             .form-group
+             .form-group(style="margin-bottom: 0px;")
                     label
                         button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;position:fixed;bottom:-10px;z-index:2;left:0px;border-radius:0px;padding-left:0')
                                   | Update

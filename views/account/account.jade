@@ -19,15 +19,6 @@ block content
                 i.ion-card
                 | To change payment information, click here.
         .form-group
-          label.col-sm-2.control-label(for='donatecheck') Monthly Donations
-          .col-sm-4
-            label.radio
-              input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
-              span Yes, I am currently donating monthly
-            label.radio
-              input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
-              span No, I am opting out of donating monthly
-        .form-group
           label.col-sm-1.control-label(for='facebook') Name
           .col-sm-4
             if user.facebook
