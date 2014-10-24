@@ -6,4 +6,4 @@ Auto change donatecheck to 1 when others are selected
             return dontecheck == 0 
             
             
-    
+Database Management (easily find and add up values fromt he database per charity db query)

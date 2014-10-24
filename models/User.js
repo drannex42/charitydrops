@@ -41,6 +41,18 @@ var userSchema = new mongoose.Schema({
     donatecheck: { type: String, default: '0' },
   },
 
+  charlinks: {
+    charitydrops: { type: String, default: 'https://charitydrops.org/' },
+    unicef: { type: String, default: 'https://uncef.charitydrops.org/' },
+    waterorg: { type: String, default: 'https://water.charitydrops.org/' },
+    plannedparenthood: { type: String, default: 'https://plannedparenthood.charitydrops.org/' },
+    hrc: { type: String, default: 'https://hrc.charitydrops.org//' },
+    wwf: { type: String, default: 'https://wwf.charitydrops.org/' },
+    stjude: { type: String, default: 'https://stjude.charitydrops.org/' },
+    redcross: { type: String, default: 'https://redcross.charitydrops.org/' },
+    breastcancer: { type: String, default: 'https://breastcancer.charitydrops.org/' },
+  },
+
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

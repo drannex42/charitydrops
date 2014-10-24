@@ -3,14 +3,14 @@ extends ../layout
 
 
 block content
-      form.form-horizontal(action='/charities/manage', method='POST')
+      form(action='/charities/manage', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         table.table.table-hover.table-bordered
           thead
             tr
               th #
               th Charity
-              th Monthly Donations
+              th Monthly Donations?
           tbody
             tr
               td 1
@@ -20,7 +20,7 @@ block content
                 p kfjdsj;fsdkfjslkjdf;lksjdf
 
               td
-                .form-group(style="margin-left: 30px;")
+                .form-group2(style="margin-left: 30px;")
                     label.radio(style="color:green;vertical-align: top;")
                       input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
                       span Yes.
@@ -29,14 +29,16 @@ block content
                       span No.
             tr
               td 2
-              td Human Rights Campaign
-                p kfjdsj;fsdkfjslkjdf;lksjdf
-
-                p #[a(href="/") Link to this charities profile]
+              td
+                strong
+                    p Human Rights Campaign &nbsp;
+                        a(href='#{user.charlinks.hrc}' style='font-size:16px;')
+                            i.ion-share
+                p The Human Rights Campaign is America's largest civil rights organization working to achieve lesbian, gay, bisexual and transgender equality.
 
               td
                 .form-group(style="margin-left: 30px;")
-                    label.radio(style="color:green;vertical-align: top;")
+                    label.radio(style="color:green;vertical-align: middle;")
                       input(type='radio', checked=user.charities.hrc=='1', name='hrc', value='1', data-toggle='radio')
                       span Yes.
                     label.radio(style="color:red;vertical-align: top;")
@@ -44,8 +46,12 @@ block content
                       span No.
             tr
               td 3
-              td World Wildlife Foundation (WWF)
-                p kfjdsj;fsdkfjslkjdf;lksjdf
+              td
+                strong
+                    p World Wildlife Foundation (WWF)
+                        a(href='#{user.charlinks.wwf}' style='font-size:16px;')
+                            i.ion-share
+                p The leading organization in wildlife conservation and endangered species
 
               td
                 .form-group(style="margin-left: 30px;")
