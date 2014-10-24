@@ -33,6 +33,7 @@ var connectAssets = require('connect-assets');
 
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
+var charitiesController = require('./controllers/charities');
 
 /**
  * API keys and Passport configuration.
@@ -148,15 +149,19 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 
-app.get('/charities', passportConf.isAuthenticated, userController.getCharities);
-app.post('/charities/', passportConf.isAuthenticated, userController.postCharities);
+// Charities
 
+app.get('/charities', passportConf.isAuthenticated, charitiesController.getCharities);
+app.post('/charities', passportConf.isAuthenticated, charitiesController.postCharities);
+
+app.get('/charities/manage', passportConf.isAuthenticated, charitiesController.getManageCharities);
+app.post('/charities/manage', passportConf.isAuthenticated, charitiesController.postManageCharities);
 
 
 /* navbar dropdown */
 app.get('/account/payment',  passportConf.isAuthenticated, function(req, res){
   res.render('account/payment', {
-    title: 'Payment'  });
+    title: 'Payment | '  });
 });
 
 /* dashboard */
@@ -165,30 +170,6 @@ app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
     title: 'Dashboard | ' });
  });
 
-
-/* navbar */
-
-app.get('/action', function(req, res){
-  res.render('action/home', {
-    title: 'Action Center | '  });
-});
-
-
-
-/* Footer Links */
-app.get('/blog', function(req, res){
-  res.render('home/blog', {
-    title: 'Blog | ' }); });
-
-app.get('/team', function(req, res){
-  res.render('home/team', {
-    title: 'Team | ' });
- });
-
-app.get('/privacy', function(req, res){
-  res.render('home/privacy', {
-    title: 'Privacy Policy | ' });
- });
 
 
 var User = require('./models/User');

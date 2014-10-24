@@ -1,0 +1,90 @@
+extends ../layout
+
+
+
+block content
+      form.form-horizontal(action='/charities/manage', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        table.table.table-hover.table-bordered
+          thead
+            tr
+              th #
+              th Charity
+              th Monthly Donations
+          tbody
+            tr
+              td 1
+              td
+                strong
+                    p DonateCheck
+                p kfjdsj;fsdkfjslkjdf;lksjdf
+
+              td
+                .form-group(style="margin-left: 30px;")
+                    label.radio(style="color:green;vertical-align: top;")
+                      input(type='radio', checked=user.charities.donatecheck=='1', name='donatecheck', value='1', data-toggle='radio')
+                      span Yes.
+                    label.radio(style="color:red;vertical-align: top;")
+                      input(type='radio', checked=user.charities.donatecheck=='0', name='donatecheck', value='0', data-toggle='radio')
+                      span No.
+            tr
+              td 2
+              td Human Rights Campaign
+                p kfjdsj;fsdkfjslkjdf;lksjdf
+
+                p #[a(href="/") Link to this charities profile]
+
+              td
+                .form-group(style="margin-left: 30px;")
+                    label.radio(style="color:green;vertical-align: top;")
+                      input(type='radio', checked=user.charities.hrc=='1', name='hrc', value='1', data-toggle='radio')
+                      span Yes.
+                    label.radio(style="color:red;vertical-align: top;")
+                      input(type='radio', checked=user.charities.hrc=='0', name='hrc', value='0', data-toggle='radio')
+                      span No.
+            tr
+              td 3
+              td World Wildlife Foundation (WWF)
+                p kfjdsj;fsdkfjslkjdf;lksjdf
+
+              td
+                .form-group(style="margin-left: 30px;")
+                    label.radio(style="color:green;vertical-align: top;")
+                      input(type='radio', checked=user.charities.wwf=='1', name='wwf', value='1', data-toggle='radio')
+                      span Yes.
+                    label.radio(style="color:red;vertical-align: top;")
+                      input(type='radio', checked=user.charities.wwf=='0', name='wwf', value='0', data-toggle='radio')
+                      span No.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             .form-group
+                    label
+                        button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;position:fixed;bottom:-10px;z-index:2;left:0px;border-radius:0px;padding-left:0')
+                                  | Update
+

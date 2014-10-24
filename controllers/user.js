@@ -5,6 +5,9 @@ var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
 var secrets = require('../config/secrets');
+var express = require('express');
+
+var app = express();
 
 /**
  * GET /login
@@ -147,18 +150,18 @@ exports.postUpdateProfile = function(req, res, next) {
 };
 
 /**
- * GET /account
- * Profile page.
+ * GET /charities
+ * Charities page.
  */
 
 exports.getCharities = function(req, res) {
-  res.render('home/charities', {
+  res.render('charities/charities', {
     title: 'Charities | '
   });
 };
 
 /**
- * POST /account/profile
+ * POST /charities
  * Update profile information.
  */
 
@@ -410,5 +413,3 @@ exports.postForgot = function(req, res, next) {
     res.redirect('/forgot');
   });
 };
-
-
