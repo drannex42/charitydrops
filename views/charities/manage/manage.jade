@@ -1,13 +1,12 @@
 extends ../layout
 
-
-
 block content
+
     ul.nav.nav-tabs
         li.active
-            a(data-toggle='tab', href='/charities') Manage Charities
+            a(data-toggle='tab', href='/charities') Manage Charitiesffff
 
-      form(action='/charities/manage', method='POST')
+      form(action='/manage', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         table.table.table-hover.table-bordered
           thead
@@ -67,7 +66,6 @@ block content
                     label.radio(style="color:red;vertical-align: top;")
                       input(type='radio', checked=user.charities.wwf=='0', name='wwf', value='0', data-toggle='radio')
                       span No.
-
 
 
 

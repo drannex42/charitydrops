@@ -159,10 +159,16 @@ app.post('/manage', passportConf.isAuthenticated, charitiesController.postManage
 
 
 /* navbar dropdown */
+app.get('/bundles', function(req, res){
+  res.render('charities/bundles', {
+    title: 'Bundles | '  });
+});
+
 app.get('/account/payment',  passportConf.isAuthenticated, function(req, res){
   res.render('account/payment', {
     title: 'Payment | '  });
 });
+
 
 /* dashboard */
 app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
