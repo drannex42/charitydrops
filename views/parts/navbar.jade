@@ -13,11 +13,13 @@
         if !user  
         else
               li(class=title=='Home'?'active':undefined)
-                a(href='/dashboard') Dashboard
+                a(href='/dashboard/') Dashboard
               li(class=title=='Charities'?'active':undefined)
-                a(href='/charities') All Charities
+                a(href='/charities/') Charities
+              li(class=title=='Bundles'?'active':undefined)
+                a(href='/bundles/') Bundles
               li(class=title=='Manage Charities'?'active':undefined)
-                a(href='/charities/manage') Manage Charities
+                a(href='/manage/') Manage Donations
       
       ul.nav.navbar-nav.navbar-right
         if !user
@@ -42,7 +44,7 @@
               li
                 a(href='/charities/manage')
                   span.ion-medkit
-                  | Manage Charities
+                  | Manage Bundles
               li
                     a(href='/logout')
                       span.ion-power

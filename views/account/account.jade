@@ -1,52 +1,96 @@
 extends ../layout
 
 block content
-    a(href='#'?'active':true) Account |
-    a(href='#') Payment Information |
-    a(href='#') Past Donations
-
     center
       .page-header 
                 h3 Account Settings
+        ul.nav.nav-tabs
+                li.active
+                    a(data-toggle='tab', href='#Account') Account
+                li
+                    a(data-toggle='tab', href='#Payment') Payment Information
+                li
+                    a(data-toggle='tab', href='#History') Past Donations
+    .tab-content
+        #Account.tab-pane.fade.in.active
+            .container
+                .row
+                     .formcentered
+                          form.form-horizontal(action='/account/profile', method='POST')
+                            input(type='hidden', name='_csrf', value=_csrf)
+                            .form-group
+                              label.col-sm-1.control-label(for='facebook') Name
+                              .col-sm-4
+                                if user.facebook
+                                    a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank' style='margin:0;')
+                                        i.fa.fa-facebook
+                                        | #{user.profile.name}
+                                  else
+                                    a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                                        i.fa.fa-facebook
+                                        | Sign in with Facebook
+                            .form-group
+                              label.col-sm-1.control-label(for='email') Email
+                              .col-sm-4
+                                input.form-control(type='email', name='email', id='email', value='#{user.email}')
+                            .form-group
+                              label.col-sm-1.control-label(for='location') Location
+                              .col-sm-4
+                                input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+                            .form-group
+                              label.col-sm-1.control-label(for='website') Website
+                              .col-sm-4
+                                input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+                            .form-group
+                              label.col-sm-5.control-label
+                                button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
+                                  | Update Profile
 
-    div
-      form.form-horizontal(action='/account/profile', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .form-group
-          label.col-sm-1.control-label Payment
-          .col-sm-4(style='text-align:center;')
-            a(href='/account/payment/')
-                i.ion-card
-                | To change payment information, click here.
-        .form-group
-          label.col-sm-1.control-label(for='facebook') Name
-          .col-sm-4
-            if user.facebook
-                a.btn.btn-block.btn-facebook.btn-social(href='http://facebook.com/#{user.facebook}', target='_blank' style='margin:0;')
-                    i.fa.fa-facebook
-                    | #{user.profile.name}
-              else
-                a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-                    i.fa.fa-facebook
-                    | Sign in with Facebook
-        
-        .form-group
-          label.col-sm-1.control-label(for='email') Email
-          .col-sm-4
-            input.form-control(type='email', name='email', id='email', value='#{user.email}')
-        .form-group
-          label.col-sm-1.control-label(for='location') Location
-          .col-sm-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-sm-1.control-label(for='website') Website
-          .col-sm-4
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          label.col-sm-5.control-label
-            button.btn.btn-block.btn-green.btn-social(type='submit',style='text-align:center;')
-              | Update Profile
-              
+
+        #Payment.tab-pane.fade
+            center
+                .page-header
+                    h3 Change Payment Information
+                    h3(style='color:red;') CURRENTLY PAYMENTS DO NOT WORK. WE ARE LOOKING INTO THIS.
+            .row
+                .col-md-4
+                .col-md-4
+                  script(src='https://js.stripe.com/v2/', type='text/javascript')
+                  form#payment-form.require-validation(accept-charset='UTF-8', action='/', data-cc-on-file='false', data-stripe-publishable-key='sk_test_JULgftCMYTMqPk9UcgYyaxXy', method='post')
+                    div(style='margin: 0; padding: 0; display: inline;')
+                      input(name='utf8', type='hidden', value='✓')
+                      input(name='_method', type='hidden', value='PUT')
+                      input(name='authenticity_token', type='hidden', value='qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=')
+                    .form-row
+                      .col-xs-12.form-group.required
+                        label.control-label Name on Card
+                        input.form-control(size='4', type='text')
+                    .form-row
+                      .col-xs-12.form-group.card.required
+                        label.control-label Card Number
+                        input.form-control.card-number(autocomplete='off', size='20', type='text')
+                    .form-row
+                      .col-xs-4.form-group.cvc.required
+                        label.control-label CVC
+                        input.form-control.card-cvc(autocomplete='off', placeholder='ex. 311', size='4', type='text')
+                      .col-xs-4.form-group.expiration.required
+                        label.control-label Expiration
+                        input.form-control.card-expiry-month(placeholder='MM', size='2', type='text')
+                      .col-xs-4.form-group.expiration.required
+                        label.control-label Year
+                        input.form-control.card-expiry-year(placeholder='YYYY', size='4', type='text')
+                    .form-row
+                      .col-md-12
+                        .form-control.total.btn.btn-info
+                          span.amount $10 (Monthly) to [[{user.charitynum}]]
+                    .form-row
+                      .col-md-12.form-group
+                        button.form-control.btn.btn-primary.submit-button(type='submit') Pay »
+                    .form-row
+                      .col-md-12.error.form-group.hide
+                        .alert-danger.alert
+                          | Please correct the errors and try again.
+                .col-md-4
 
         //
           .page-header

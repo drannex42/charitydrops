@@ -41,6 +41,18 @@ var userSchema = new mongoose.Schema({
     donatecheck: { type: String, default: '0' },
   },
 
+  bundles: {
+/**
+ * 0 = False
+ * 1 = True
+ */
+    one: { type: String, default: '0' },
+    two: { type: String, default: '0' },
+    three: { type: String, default: '0' },
+    four: { type: String, default: '0' },
+  },
+
+
   charlinks: {
     charitydrops: { type: String, default: 'https://charitydrops.org/' },
     unicef: { type: String, default: 'https://uncef.charitydrops.org/' },

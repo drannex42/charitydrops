@@ -1,0 +1,25 @@
+From 6c60e3ddc860b8e5e9867fd8ec4674c053f9042a Mon Sep 17 00:00:00 2001
+From: Macleod Sawyer <macleod@charitydrops.org>
+Date: Mon, 27 Oct 2014 01:04:26 -0500
+Subject: [PATCH] aaaye
+
+---
+ controllers/charities.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/controllers/charities.js b/controllers/charities.js
+index d28e763..688770a 100644
+--- a/controllers/charities.js
++++ b/controllers/charities.js
+@@ -52,7 +52,7 @@ exports.postManageCharities = function(req, res, next) {
+
+     user.save(function(err) {
+       if (err) return next(err);
+-      req.flash('success', { msg: 'Donations updated.' });
++      req.flash('success', { msg: 'Donations updated!' });
+       res.redirect('/manage');
+     });
+   });
+--
+1.8.1.msysgit.1
+

@@ -27,6 +27,16 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+var braintree = require('braintree');
+
+var gateway = braintree.connect({
+    environment:  braintree.Environment.Sandbox,
+    merchantId:   'w79y37fvh73gthcw',
+    publicKey:    'gcqy3dq9mtgcvg64',
+    privateKey:   '7f6abafbe0408b18e2533bfbde5fb41d'
+});
+
+
 /**
  * Controllers (route handlers).
  */
@@ -151,11 +161,10 @@ app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 
 // Charities
 
-app.get('/charities', passportConf.isAuthenticated, charitiesController.getCharities);
-app.post('/charities', passportConf.isAuthenticated, charitiesController.postCharities);
+app.get('/charities', charitiesController.getCharities);
 
-app.get('/charities/manage', passportConf.isAuthenticated, charitiesController.getManageCharities);
-app.post('/charities/manage', passportConf.isAuthenticated, charitiesController.postManageCharities);
+app.get('/manage', passportConf.isAuthenticated, charitiesController.getManageCharities);
+app.post('/manage', passportConf.isAuthenticated, charitiesController.postManageCharities);
 
 
 /* navbar dropdown */
@@ -170,6 +179,15 @@ app.get('/dashboard', passportConf.isAuthenticated, function(req, res){
     title: 'Dashboard | ' });
  });
 
+app.get('/team', function(req, res){
+  res.render('home/team', {
+    title: 'Team | ' });
+ });
+
+app.get('/privacy', function(req, res){
+  res.render('home/privacy', {
+    title: 'Privacy Policy | ' });
+ });
 
 
 var User = require('./models/User');

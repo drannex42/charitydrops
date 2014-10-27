@@ -17,8 +17,8 @@ exports.getCharities = function(req, res) {
 // GET /charities/manage
 
 exports.getManageCharities = function(req, res) {
-  res.render('charities/manage', {
-    title: 'Manage Charities | '
+  res.render('account/manage', {
+    title: 'Manage | '
   });
 };
 
@@ -52,8 +52,8 @@ exports.postManageCharities = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', { msg: 'Charity information updated.' });
-      res.redirect('/charities/manage');
+      req.flash('success', { msg: 'Donations updated!' });
+      res.redirect('/manage');
     });
   });
 };
