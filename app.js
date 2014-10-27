@@ -27,15 +27,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
-var braintree = require('braintree');
-
-var gateway = braintree.connect({
-    environment:  braintree.Environment.Sandbox,
-    merchantId:   'w79y37fvh73gthcw',
-    publicKey:    'gcqy3dq9mtgcvg64',
-    privateKey:   '7f6abafbe0408b18e2533bfbde5fb41d'
-});
-
 
 /**
  * Controllers (route handlers).
