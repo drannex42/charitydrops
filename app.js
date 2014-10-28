@@ -1,7 +1,6 @@
 /**
  * Module dependencies.
  */
-
 var express = require('express');
 var http = require('http');
 var enforce = require('express-sslify');
@@ -35,6 +34,7 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var charitiesController = require('./controllers/charities');
+var apiController = require('./controllers/api');
 
 /**
  * API keys and Passport configuration.
@@ -150,6 +150,9 @@ app.post('/account/delete', passportConf.isAuthenticated, userController.postDel
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 
+app.get('/account/payment', apiController.getStripe);
+app.post('/account/payment', apiController.postStripe);
+
 // Charities
 
 app.get('/charities', charitiesController.getCharities);
@@ -189,26 +192,6 @@ app.get('/privacy', function(req, res){
 
 var User = require('./models/User');
 
-/* Adding payment to db */
-app.post('/charge', function(req, res){
-    User.update({_id: req.user._id}, {
-        tokens:{
-            stripe: {
-                token: req.body.stripeToken,
-                tokenType: req.body.stripeTokenType,
-                email: req.body.stripeEmail
-            }
-        }
-    }, function(err, user) {
-        if (err) console.log(err);
-        console.log('Stripe details added successfully.');
-        // Change this to render the you've done good page. <3
-        // Good luck with this.
-        res.render('account/payment', {
-            title: 'Payment '
-        });
-    });
-});
 
 
 /**

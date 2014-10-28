@@ -2,11 +2,21 @@ extends ../layout
 
 block content
             .container
+                script(type='text/javascript', src='https://js.stripe.com/v2/')
+
+
                 center
                     .page-header 
                         h3 Change Payment Information
                         h3(style='color:red;') CURRENTLY PAYMENTS DO NOT WORK. WE ARE LOOKING INTO THIS.
 
-                form#checkout(method='post', action='/checkout')
-                  #dropin
-                  input(type='submit', value='Pay $10')
+                 form(method='POST')
+                    input(type='hidden', name='_csrf', value=_csrf)
+                    script(
+                    src='https://checkout.stripe.com/checkout.js',
+                    class='stripe-button',
+                    data-key='pk_test_BWIL5e8gA3a4UMRrcYat1flV',
+                    data-image='http://static.tumblr.com/nljhkjv/z0Jlpk23i/logo',
+                    data-name='Hackathon Starter',
+                    data-description='Donation Amount',
+                    data-amount='395')

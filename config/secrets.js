@@ -82,8 +82,10 @@ module.exports = {
   },
 
   stripe: {
-    apiKey: process.env.STRIPE_KEY || 'sk_test_JULgftCMYTMqPk9UcgYyaxXy'
+    apiKey: process.env.STRIPE_KEY || 'sk_test_JULgftCMYTMqPk9UcgYyaxXy',
+      publishableKey: process.env.STRIPE_PKEY || 'pk_test_BWIL5e8gA3a4UMRrcYat1flV'
   },
+
 
   tumblr: {
     consumerKey: process.env.TUMBLR_KEY || 'hello',

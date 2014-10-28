@@ -7,8 +7,10 @@ html
     meta(name='description', content='')
     meta(name='csrf-token', content=_csrf)
     meta(name='author', content='')
-    title #{title}CharityDrops.orgO
+    title #{title}CharityDrops.org
     != css('styles')
+    != css('lib/stripe')
+    script(src='/js/stripejq.js')
     link(href='https://fonts.googleapis.com/css?family=Pacifico', rel='stylesheet', type='text/css')
 
 

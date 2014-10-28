@@ -42,19 +42,19 @@
               li
                 a(href='/account')
                   span.ion-android-settings
-                  | Account Settings
+                  |   Account Settings
               li
-                a(href='/charities/manage')
+                a(href='/manage')
                   span.ion-medkit
-                  | Manage Bundles
+                  |   Manage Bundles
               li
                     a(href='/logout')
                       span.ion-power
-                      | Logout
+                      |    Logout
               li
                 center
                     if user.charities.donatecheck == "1"
                         span.ion-checkmark-circled(style="color:green;text-align:right;") &nbsp;You are donating!
                     else
                         span.ion-checkmark-circled(style="color:red;") &nbsp;You are not currently donating,
-                        #[a(href="/account/payment" style="text-decoration:underline;") lets change that]
+                        a(href="/account/payment" style="text-decoration:underline;") lets change that.

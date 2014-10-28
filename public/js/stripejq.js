@@ -1,55 +1,33 @@
-$(function() {
-  $('form.require-validation').bind('submit', function(e) {
-    var $form         = $(e.target).closest('form'),
-        inputSelector = ['input[type=email]', 'input[type=password]',
-                         'input[type=text]', 'input[type=file]',
-                         'textarea'].join(', '),
-        $inputs       = $form.find('.required').find(inputSelector),
-        $errorMessage = $form.find('div.error'),
-        valid         = true;
+Stripe.setPublishableKey('pk_test_BWIL5e8gA3a4UMRrcYat1flV');
+                  function stripeResponseHandler(status, response) {
+                      var $form = $('#payment-form');
 
-    $errorMessage.addClass('hide');
-    $('.has-error').removeClass('has-error');
-    $inputs.each(function(i, el) {
-      var $input = $(el);
-      if ($input.val() === '') {
-        $input.parent().addClass('has-error');
-        $errorMessage.removeClass('hide');
-        e.preventDefault(); // cancel on first error
-      }
-    });
+                      if (response.error) {
+                        // Show the errors on the form
+                        $form.find('.payment-errors').text(response.error.message);
+                        $form.find('button').prop('disabled', false);
+                      } else {
+                        // response contains id and card, which contains additional card details
+                        var token = response.id;
+                        // Insert the token into the form so it gets submitted to the server
+                        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+                        // and submit
+                        $form.get(0).submit();
+
+                        }
+                  }
+
+}jQuery(function($) {
+  $('#payment-form').submit(function(event) {
+    var $form = $(this);
+
+    // Disable the submit button to prevent repeated clicks
+    $form.find('button').prop('disabled', true);
+
+    Stripe.card.createToken($form, stripeResponseHandler);
+
+    // Prevent the form from submitting with the default action
+    return false;
   });
 });
 
-$(function() {
-  var $form = $("#payment-form");
-
-  $form.on('submit', function(e) {
-    if (!$form.data('cc-on-file')) {
-      e.preventDefault();
-      Stripe.setPublishableKey($form.data('sk_test_JULgftCMYTMqPk9UcgYyaxXy'));
-      Stripe.createToken({
-        number: $('.card-number').val(),
-        cvc: $('.card-cvc').val(),
-        exp_month: $('.card-expiry-month').val(),
-        exp_year: $('.card-expiry-year').val()
-      }, stripeResponseHandler);
-    }
-  });
-
-  function stripeResponseHandler(status, response) {
-    if (response.error) {
-      $('.error')
-        .removeClass('hide')
-        .find('.alert')
-        .text(response.error.message);
-    } else {
-      // token contains id, last4, and card type
-      var token = response['id'];
-      // insert the token into the form so it gets submitted to the server
-      $form.find('input[type=text]').empty();
-      $form.append("<input type='hidden' name='reservation[stripe_token]' value='" + token + "'/>");
-      $form.get(0).submit();
-    }
-  }
-})
