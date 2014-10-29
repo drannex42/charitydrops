@@ -1,0 +1,50 @@
+extends homelayout
+
+block content
+    if !user
+            section#intro
+              .container
+                    center
+                        h1 Let's make the world better.
+                        | <br><br>
+                        a.button.btn.btn.btn-primary(href='/')
+                                | Closed for Private Beta
+                        | <br><br>
+                        a(href='#learnmore')
+                            | Learn more about how it works
+
+            section#arrowdown
+                .container
+                        a(href="#learnmore")
+                            i.ion-chevron-down
+            // Section 2
+            section#learnmore
+                center
+                    h3 How it works:
+                  .container
+                    article.cf
+                      div.img-circle-div
+                        div.iconsbig
+                            i.ion-ios7-heart
+                        h2 You sign up to help others.
+                      div.img-circle-div
+                        div.iconsbig
+                            i.ion-card 
+                        h2 Enter in your payment information
+                      div.img-circle-div
+                        div.iconsbig
+                            i.ion-ios7-medkit
+                        h2 Automatically donate to the things you love.
+                      div.img-circle-div
+                        div.iconsbig
+                            i.ion-ios7-checkmark
+                          h2 You help make the world better. Every month.
+
+
+
+
+    else 
+        if user.user
+        script.
+            window.location = "/dashboard"
+

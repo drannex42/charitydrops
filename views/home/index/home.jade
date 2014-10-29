@@ -1,53 +1,271 @@
-extends homelayout
+extend homelayout
 
 block content
-    if !user
-            section#intro
-              .container
-                    center
-                        h1 Let's make the world better.
-                        | <br><br>
-                        a.button.btn.btn.btn-primary(href='/')
-                                | Closed for Private Beta
-                        | <br><br>
-                        a(href='#learnmore')
-                            | Learn more about how it works
-
-            section#arrowdown
-                .container
-                        a(href="#learnmore")
-                            i.ion-chevron-down
-            // Section 2
-            section#learnmore
-                center
-                    h3 How it works:
-                  div.container
-                    article.cf
-                      div.img-circle-div
-                        div.iconsbig
-                            i.ion-heart(style="color:#FF4136")&nbsp;&nbsp;&nbsp;
-                            i.ion-arrow-right-c
-                        h2 You sign up the to help others.
-                      div.img-circle-div
-                        div.iconsbig
-                            i.ion-card(style="color:#FFDC00")&nbsp;&nbsp;&nbsp;
-                            i.ion-arrow-right-c
-                        h2 You enter in your payment information
-                      div.img-circle-div
-                        div.iconsbig
-                            i.ion-medkit(style="color:#0074D9")&nbsp;&nbsp;&nbsp;
-                            i.ion-arrow-right-c
-                        h2 Every month you help the causes you love with recurring monthly donations
-                      div.img-circle-div
-                        div.iconsbig(style="color:#2ECC40")
-                            i.ion-checkmark
-                          h2 You just helped make the world better. Every month.
-
-
-
-
-    else 
-        if user.user
-        script.
-            window.location = "/dashboard"
-
+      .loader
+          .fading-line
+        section#home.page
+          .container
+            .content.cover.text-center
+              .row
+                .col-lg-12
+                  h1.animated.hiding(data-animation='fadeInDown', data-delay='300') Let's make the world better.
+                  a.btn.btn-blue.nav-external.animated.hiding(data-animation='fadeIn', data-delay='900', href='#services') Find more
+                  h3.animated.hiding(data-animation='fadeIn', data-delay='600')
+        #navbar-top
+          nav.navbar.navbar-default.navbar-static(role='navigation')
+            .container
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand.nav-external(href='#home') CharityDrops
+              .collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='#home') Home
+                  li
+                    a(href='#services') What We Do
+                  li
+                    a(href='#work') Work
+                  li
+                    a(href='#clients') Clients
+                  li
+                    a(href='#about') About
+                  li
+                    a(href='/auth/facebook') Login
+        section#services.page
+          .container
+            .content.text-center
+              .heading
+                h2 Are you ready to make the world better?
+                .border
+                p
+                  | We want to make it painless and easy for you to donate to the causes you love and care about.
+              .row
+                .col-lg-4.service.animated.hiding(data-animation='fadeInUp', data-delay='300')
+                  i.fa.fa-globe.fa-5x
+                  h3
+                    a(href='#') Charities around the world
+                  p
+                    | Dozens of charities around the world are routinely being added to the service. We want to make it easy on you to donate to as many charities as possible through bundles.
+                .col-lg-4.service.animated.hiding(data-animation='fadeInUp', data-delay='600')
+                      .serviceheart
+                         i.fa.fa-heart.fa-5x
+                      h3
+                        a(href='#') Gift Love
+                      p
+                        | We are in the business of helping, and by doing so we need you to help us send all the love we can to the organizations that need them most. 
+                .col-lg-4.service.animated.hiding(data-animation='fadeInUp', data-delay='900')
+                  i.fa.fa-check.fa-5x
+                  h3
+                    a(href='#') Are you ready?
+                  p
+                    | All you need to do to help is #[a(href="/auth/facebook" style="text-decoration:underline;") register], enter in your payment information, and you are on your way to helping 
+                    strong
+                        | thousands!
+                    
+        section#work.page
+          .container
+            .content.text-center
+              .heading
+                h2 Charities we feature
+                .border
+                p
+                  | These are the wonderful charities we support, all of these charities will be open to being donated to at any moment in time.
+                
+              .row
+                .col-md-12
+                  #portfolio
+                    ul.filters.list-inline
+                      li
+                        a.active(data-filter='*', href='#') All
+                      li
+                        a(data-filter='.human', href='#') Human Rights
+                      li
+                        a(data-filter='.animal', href='#') Animal Rights
+                      li
+                        a(data-filter='.education', href='#') Education
+                      li
+                        a(data-filter='.science', href='#') Science & Health
+                    ul.items.list-unstyled.clearfix.animated.hiding(data-animation='fadeInRight')
+                      li.item.human
+                        a(href='#')
+                          img(src='home/img/work/1.jpg', alt='')
+                          .overlay
+                            span Etiam porta
+                      li.item.animal
+                        a(href='#')
+                          img(src='home/img/work/2.jpg', alt='')
+                          .overlay
+                            span Lorem ipsum
+                      li.item.education
+                        a(href='#')
+                          img(src='home/img/work/3.jpg', alt='')
+                          .overlay
+                            span Vivamus quis
+                      li.item.science
+                        a(href='#')
+                          img(src='home/img/work/4.jpg', alt='')
+                          .overlay
+                            span Donec ac tellus
+                      li.item.human
+                        a(href='#')
+                          img(src='home/img/work/5.jpg', alt='')
+                          .overlay
+                            span Etiam porta
+                      li.item.animal
+                        a(href='#')
+                          img(src='home/img/work/6.jpg', alt='')
+                          .overlay
+                            span Lorem ipsum
+                      li.item.education
+                        a(href='#')
+                          img(src='home/img/work/7.jpg', alt='')
+                          .overlay
+                            span Vivamus quis
+                      li.item.science
+                        a(href='#')
+                          img(src='home/img/work/8.jpg', alt='')
+                          .overlay
+                            span Donec ac tellus
+        section#clients.page
+          .container
+            .content.text-center
+              .row
+                .col-lg-12.animated.hiding(data-animation='fadeInDown')
+                  #testimonials.carousel.slide
+                    ol.carousel-indicators
+                      li.active(data-target='#testimonials', data-slide-to='0')
+                      li(data-target='#testimonials', data-slide-to='1')
+                      li(data-target='#testimonials', data-slide-to='2')
+                      li(data-target='#testimonials', data-slide-to='3')
+                    .carousel-inner
+                      .item.active
+                        p.quote
+                          | Quisque convallis diam ligula, ac accumsan eros pretium vel. Curabitur convallis nibh sit amet iaculis ornare. Integer blandit quis diam sed tincidunt.
+                        p.client John Doe / CEO
+                      .item
+                        p.quote
+                          | Vestibulum volutpat accumsan sem non eleifend. Vivamus pretium nisi semper sapien eleifend, vel lacinia lacus sodales. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra.
+                        p.client Jorginho Jian / Developer
+                      .item
+                        p.quote
+                          | Curabitur in nulla et lorem varius convallis. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra. Duis quis accumsan urna. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut.
+                        p.client Gandalf Kadir / Web Designer
+                      .item
+                        p.quote
+                          | Nullam vel tempor quam, id dictum eros. Nam augue sem, aliquam ac mauris in, pharetra convallis quam. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut. Vivamus pretium nisi semper sapien eleifend.
+                        p.client Homeros Yehudi / QA Engineer
+                    a.left.carousel-control(data-slide='prev', href='#testimonials') ‹
+                    a.right.carousel-control(data-slide='next', href='#testimonials') ›
+        section#about.page
+          .container
+            .content.text-center
+              .heading
+                h2 About Us.
+                .border
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
+              .row
+                .col-md-3.center-block.teammate.animated.hiding(data-animation='fadeInLeft', data-delay='600')
+                  .profile-photo
+                    img.img-responsive(src='home/img/team/1.jpg', alt='')
+                  .bio
+                    h4 John Doe
+                    h5 Web Developer
+                    .border
+                    p
+                      | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
+                    ul.list-inline
+                      li
+                        a(href='http://www.facebook.com', title='Facebook')
+                          i.fa.fa-facebook
+                      li
+                        a(href='http://www.twitter.com', title='Twitter')
+                          i.fa.fa-twitter
+                      li
+                        a(href='http://www.linkedin.com', title='LinkedIn')
+                          i.fa.fa-linkedin
+                      li
+                        a(href='http://www.github.com', title='GitHub')
+                          i.fa.fa-github
+                .col-md-3.center-block.teammate.animated.hiding(data-animation='fadeInUp', data-delay='300')
+                  .profile-photo
+                    img.img-responsive(src='home/img/team/2.jpg', alt='')
+                  .bio
+                    h4 Clarinda Gratia
+                    h5 Designer
+                    .border
+                    p
+                      | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
+                    ul.list-inline
+                      li
+                        a(href='http://www.dribbble.com', title='Dribbble')
+                          i.fa.fa-dribbble
+                      li
+                        a(href='http://www.pinterest.com', title='Pinterest')
+                          i.fa.fa-pinterest
+                      li
+                        a(href='http://www.instagram.com', title='Instagram')
+                          i.fa.fa-instagram
+        
+          .twitter.text-center
+            .animated.hiding(data-animation='fadeIn')
+              i.fa.fa-twitter.fa-3x
+              #feed
+        section#contact.page
+          .container
+            .content.cover.text-center
+              .heading
+                h2 Getting in touch.
+                .border
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              .row
+                .col-lg-4.animated.hiding(data-animation='fadeInRight', data-delay='600')
+                  i.fa.fa-map-marker.fa-3x
+                  a(href='#') Mostar, Bosnia and Herzegovina
+                .col-lg-4.animated.hiding(data-animation='fadeInDown', data-delay='300')
+                  i.fa.fa-phone.fa-3x
+                  a(href='tel:9876543210') (987) 654-3210
+                .col-lg-4.animated.hiding(data-animation='fadeInLeft', data-delay='600')
+                  i.fa.fa-envelope.fa-3x
+                  a(href='mailto:john.doe@mail.com') john.doe@mail.com
+        footer#footer
+          .container
+            .row
+              .col-lg-12.animated.hiding(data-animation='fadeInUp')
+                ul.social.list-inline
+                  li
+                    a.facebook(href='http://www.facebook.com', title='Facebook')
+                      i.fa.fa-facebook.fa-2x
+                  li
+                    a.twitter(href='http://www.twitter.com', title='Twitter')
+                      i.fa.fa-twitter.fa-2x
+                  li
+                    a.tumblr(href='http://www.blog.charitydrops.org', title='Tumblr | Blog')
+                      i.fa.fa-tumblr.fa-2x
+                p.copyright
+                  | © 2014 CharityDrops.org
+       html.           
+        <script src="home/js/jquery.min.js"></script>
+        <script src="home/js/bootstrap.min.js"></script>
+        <script src="home/js/isotope.pkgd.min.js"></script>
+        <script src="home/js/imagesloaded.min.js"></script>
+        <script src="home/js/jquery.scrollTo.min.js"></script>
+        <script src="home/js/jquery.nav.min.js"></script>
+        <script src="home/js/jquery.appear.min.js"></script>
+        <script src="home/js/twitterFetcher.min.js"></script>
+        <script src="home/js/script.js"></script>
+        <!-- Google Analytics: change UA-25089888-9 to be your site's ID. -->
+        <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-25089888-9');ga('send','pageview');
+        </script>
+          </body>
+        </html>

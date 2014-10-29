@@ -5,7 +5,7 @@ var express = require('express');
 var http = require('http');
 var enforce = require('express-sslify');
 var favicon = require('serve-favicon');
-
+var stripe = require('stripe')('sk_test_JULgftCMYTMqPk9UcgYyaxXy');
 
 
 var cookieParser = require('cookie-parser');
@@ -49,7 +49,25 @@ var passportConf = require('./config/passport');
 
 var app = express();
 
+// Stripe Shit
 
+app.post('/charge', function(req, res) {
+    var stripeToken = req.body.stripeToken;
+    var amount = 1000;
+
+    stripe.charges.create({
+        card: stripeToken,
+        currency: 'usd',
+        amount: amount
+    },
+    function(err, charge) {
+        if (err) {
+            res.send(500, err);
+        } else {
+            res.send(204);
+        }
+    });
+});
 
 // favicon
 
