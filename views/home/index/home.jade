@@ -1,6 +1,7 @@
 extend homelayout
 
 block content
+    if !user
       .loader
           .fading-line
         section#home.page
@@ -8,9 +9,10 @@ block content
             .content.cover.text-center
               .row
                 .col-lg-12
-                  h1.animated.hiding(data-animation='fadeInDown', data-delay='300') Let's make the world better.
-                  a.btn.btn-blue.nav-external.animated.hiding(data-animation='fadeIn', data-delay='900', href='#services') Find more
-                  h3.animated.hiding(data-animation='fadeIn', data-delay='600')
+                  brand.animated.hiding(data-animation='fadeInDown', data-delay='300') CharityDrops
+                  h1.animated.hiding(data-animation='fadeInDown', data-delay='300' style="") Let's make the world better.
+                  a.button.btn.btn.btn-primary.animated.hiding(data-animation='rotateIn', data-delay='900', href='#/')
+                    | Closed for Private Beta
         #navbar-top
           nav.navbar.navbar-default.navbar-static(role='navigation')
             .container
@@ -26,16 +28,17 @@ block content
                   li.active
                     a(href='#home') Home
                   li
-                    a(href='#services') Ready?
+                    a(href='#ready') Ready?
                   li
-                    a(href='#work') Charities
+                    a(href='#charities') Charities
                   li
                     a(href='#about') About
                   li
-                    a(href='/auth/facebook') Register
+                    a(href='#register') Register
                   li
-                    a(href='/auth/facebook') Login
+                    a(href='#login') Login
         section#services.page
+        #ready.page
           .container
             .content.text-center
               .heading
@@ -67,6 +70,7 @@ block content
                         | thousands!
                     
         section#work.page
+        #charities.page
           .container
             .content.text-center
               .heading
@@ -164,52 +168,46 @@ block content
           .container
             .content.text-center
               .heading
-                h2 About Us.
+                h2 Who are we?
                 .border
                 p
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
-              .row
-                .col-md-3.center-block.teammate.animated.hiding(data-animation='fadeInLeft', data-delay='600')
-                  .profile-photo
-                    img.img-responsive(src='home/img/team/1.jpg', alt='')
-                  .bio
-                    h4 John Doe
-                    h5 Web Developer
-                    .border
-                    p
-                      | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
-                    ul.list-inline
-                      li
-                        a(href='http://www.facebook.com', title='Facebook')
-                          i.fa.fa-facebook
-                      li
-                        a(href='http://www.twitter.com', title='Twitter')
-                          i.fa.fa-twitter
-                      li
-                        a(href='http://www.linkedin.com', title='LinkedIn')
-                          i.fa.fa-linkedin
-                      li
-                        a(href='http://www.github.com', title='GitHub')
-                          i.fa.fa-github
-                .col-md-3.center-block.teammate.animated.hiding(data-animation='fadeInUp', data-delay='300')
-                  .profile-photo
-                    img.img-responsive(src='home/img/team/2.jpg', alt='')
-                  .bio
-                    h4 Clarinda Gratia
-                    h5 Designer
-                    .border
-                    p
-                      | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
-                    ul.list-inline
-                      li
-                        a(href='http://www.dribbble.com', title='Dribbble')
-                          i.fa.fa-dribbble
-                      li
-                        a(href='http://www.pinterest.com', title='Pinterest')
-                          i.fa.fa-pinterest
-                      li
-                        a(href='http://www.instagram.com', title='Instagram')
-                          i.fa.fa-instagram
+                  | We are just two teenagers who want to help make the world better.
+                  .rowabout
+                    .col-md-5.teammate.animated.hiding(data-animation='fadeInLeft', data-delay='600')
+                      .profile-photo
+                        img.img-responsive(src='home/img/team/1.jpg', alt='')
+                      .bio
+                        h4 Macleod Sawyer
+                        h5 CEO | Cofounder
+                        .border
+                        p
+                          | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
+                        ul.list-inline
+                          li
+                            a(href='http://www.twitter.com/mxcleodsawyer', target="_blank", title='Twitter')
+                              i.fa.fa-twitter
+                          li
+                            a(href='http://www.mxcleod.tumblr.com', target="_blank", title='Tumblr')
+                              i.fa.fa-tumblr
+                          li
+                            a(href='http://www.github.com/macleodsawyer', target="_blank", title='GitHub')
+                              i.fa.fa-github
+                          li
+                            a(href='mailto:macleod@charitydrops.org', target="_blank", title='Email')
+                              i.fa.fa-envelope-o
+                    .col-md-5.teammate.animated.hiding(data-animation='fadeInUp', data-delay='300')
+                      .profile-photo
+                        img.img-responsive(src='home/img/team/2.jpg', alt='')
+                      .bio
+                        h4 Elizabeth Spicer
+                        h5 Cofounder
+                        .border
+                        p
+                          | Lorem ipsum dolor sit, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore.
+                        ul.list-inline
+                          li
+                            a(href='mailto:elizabeth@charitydrops.org', target="_blank", title='Email')
+                              i.fa.fa-envelope-o
         
           .twitter.text-center
             .animated.hiding(data-animation='fadeIn')
@@ -221,17 +219,27 @@ block content
               .heading
                 h2 Getting in touch.
                 .border
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                p If you are in serious need of getting in touch, we prefer if you tweeted or emailed our support team!
               .row
                 .col-lg-4.animated.hiding(data-animation='fadeInRight', data-delay='600')
-                  i.fa.fa-map-marker.fa-3x
-                  a(href='#') Mostar, Bosnia and Herzegovina
+                  i.fa.fa-twitter.fa-3x
+                  a(href='http://twitter.com/charitydrops') @CharityDrops
                 .col-lg-4.animated.hiding(data-animation='fadeInDown', data-delay='300')
                   i.fa.fa-phone.fa-3x
                   a(href='tel:9876543210') (987) 654-3210
                 .col-lg-4.animated.hiding(data-animation='fadeInLeft', data-delay='600')
                   i.fa.fa-envelope.fa-3x
-                  a(href='mailto:john.doe@mail.com') john.doe@mail.com
+                  a(href='mailto:support@charitydrops.org') support@charitydrops.org
+        section#work.page
+        #login.page
+        #register.page
+          .container
+            .content.text-center
+              .heading
+                h2 Login | Register
+                .border
+                p
+                  | We are currently in private beta, the login and register buttons will be here soon!
         footer#footer
           .container
             .row
@@ -267,5 +275,7 @@ block content
           r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
           ga('create','UA-25089888-9');ga('send','pageview');
         </script>
-          </body>
-        </html>
+    else
+        if user.user
+        script.
+            window.location = "/dashboard"

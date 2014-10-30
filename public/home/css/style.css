@@ -31,6 +31,14 @@ a:focus {
      -moz-border-radius: 8px;
           border-radius: 8px;
 }
+
+brand {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size:90px;
+    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+}
+
 .btn {
   font-size: 12px;
   font-weight: bold;
@@ -42,6 +50,11 @@ a:focus {
      -moz-transition: all .2s;
       -ms-transition: all .2s;
           transition: all .2s;
+}
+
+
+.rowabout {
+margin-left: 15%;
 }
 .btn-blue {
   color: #fff;
@@ -145,11 +158,11 @@ border-radius: 0px;
   margin: 0 auto;
   background-color: #71be3c;
 }
-.page .heading p { margin: 20px auto 0 }
+.page .heading p { margin: 10px auto 0 }
 #home {
   padding: 0;
   color: #fff;
-  background-image: url(../img/cover/home.jpg);
+  background-image: url(../img/cover/biking.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -276,7 +289,7 @@ border-radius: 0px;
   background-image: none;
   text-shadow: none;
 }
-#about .content { padding-bottom: 0 }
+#about .content { padding-bottom: 0;}
 #about .teammate { 
   margin-top: 60px; 
   margin-bottom: 60px; 
@@ -311,6 +324,10 @@ border-radius: 0px;
 #about .teammate .bio a { color: #666 }
 #about .teammate .bio a:hover,
 #about .teammate .bio a:focus { color: #222 }
+
+#about .teammate .centered {
+    margin-left: 25%;
+}
 #about .twitter {
   padding: 20px 0;
   background-color: #f5f5f5;
@@ -375,4 +392,19 @@ border-radius: 0px;
 .col-centered{
     float: none;
     margin: 0 auto 0;
+}
+
+.btn-primary {
+/* color: #ffffff; */
+background-color: #007aff;
+border-color: #357ebd;
+color:white;
+-webkit-animation: rotateIn 2s;
+}
+
+
+.btn:hover {
+    color:white;
+    border-color:white;
+    border-bottom: 1px solid white;
 }
