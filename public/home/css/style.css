@@ -39,6 +39,7 @@ brand {
     text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
 }
 
+
 .btn {
   font-size: 12px;
   font-weight: bold;
@@ -132,7 +133,7 @@ border-radius: 0px;
   background-color: transparent;
     
 }
-.navbar-default .navbar-toggle { border-color: transparent }
+.navbar-default .navbar-toggle { border-color: transparent; }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background-color: transparent }
 .navbar-default .navbar-toggle:hover .icon-bar { background-color: #333 }
@@ -147,7 +148,7 @@ border-radius: 0px;
 }
 .page { overflow: hidden }
 .page .content { padding: 60px 0 }
-.page .content.cover { padding: 240px 0 }
+.page .content.cover { padding: 15% 0; }
 .page .heading h2 {
   margin-top: 0;
   margin-bottom: 20px;
@@ -218,8 +219,8 @@ border-radius: 0px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  background-color: rgba(0,0,0,0.6);
+ /* background-color: #000;
+  background-color: rgba(0,0,0,0.6); */
   -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
@@ -230,7 +231,7 @@ border-radius: 0px;
   position: absolute;
   left: 20px;
   bottom: 20px;
-  color: #fff;
+  color: black;
   text-transform: uppercase;
 }
 #portfolio .items li a:hover .overlay { opacity: 1 }
@@ -382,7 +383,11 @@ border-radius: 0px;
   .page .content.cover { padding: 160px 0 }
   #testimonials .quote { padding: 0 50px }
   #testimonials .carousel-control.right { right: 10px }
+  brand { font-size: 30px; }
+  #home h1 {font-size: 40px;}
 }
+}
+
 @media (max-width: 480px) { 
   .page .content.cover { padding: 80px 0 }
   #portfolio .items li { width: 100% }
@@ -408,3 +413,4 @@ color:white;
     border-color:white;
     border-bottom: 1px solid white;
 }
+
