@@ -12,7 +12,8 @@ block content
                   brand.animated.hiding(data-animation='fadeInDown', data-delay='300') CharityDrops
                   h1.animated.hiding(data-animation='fadeInDown', data-delay='300' style="") Let's make the world better.
                   a.button.btn.btn.btn-primary.animated.hiding(data-animation='rotateIn', data-delay='900', href='#/')
-                    | Closed for Private Beta
+                    i.fa.fa-facebook
+                    | &nbsp;&nbsp;&nbsp;Login With Facebook
         #navbar-top
           nav.navbar.navbar-default.navbar-static(role='navigation')
             .container
@@ -74,15 +75,14 @@ block content
           .container
             .content.text-center
               .heading
-                h2 Charities we feature
+                h2 A few of the charities we feature
                 .border
                 p
-                  | These are the wonderful charities we support, all of these charities will be open to being donated to at any moment in time.
+                  | These are the wonderful charities we support, all of these charities will be open to being donated now, or soon.
                 
               .row
                 .col-md-12
-                  #portfolio
-                    ul.filters.list-inline
+                   // ul.filters.list-inline
                       li
                         a.active(data-filter='*', href='#') All
                       li
@@ -91,45 +91,46 @@ block content
                         a(data-filter='.education', href='#') Education
                       li
                         a(data-filter='.science', href='#') Science & Health
-                    ul.items.list-unstyled.clearfix.animated.hiding(data-animation='fadeInRight')
-                      li.item.human
-                        a(href='#')
-                          img(src='home/img/work/1.jpg', alt='')
-                          .overlay
-                      li.item.science
-                        a(href='#')
-                          img(src='home/img/work/amerciancancersociety.jpg', alt='')
-                          .overlay
+                #portfolio
+                        ul.items.list-unstyled.clearfix.animated.hiding(data-animation='fadeInRight')
+                          li.item.human
+                            a(href='#')
+                              img(src='home/img/work/1.jpg', alt='')
+                              .overlay
+                          li.item.science
+                            a(href='#')
+                              img(src='home/img/work/amerciancancersociety.jpg', alt='')
+                              .overlay
 
-                      li.item.human
-                        a(href='#')
-                          img(src='home/img/work/actionagainsthunger.jpg', alt='')
-                          .overlay
+                          li.item.human
+                            a(href='#')
+                              img(src='home/img/work/actionagainsthunger.jpg', alt='')
+                              .overlay
 
-                      li.item.science
-                        a(href='#')
-                          img(src='home/img/work/habitatforhumanity.jpg', alt='')
-                          .overlay
+                          li.item.science
+                            a(href='#')
+                              img(src='home/img/work/habitatforhumanity.jpg', alt='')
+                              .overlay
 
-                      li.item.education
-                        a(href='#')
-                          img(src='home/img/work/teachforamerica.jpg', alt='')
-                          .overlay
+                          li.item.education
+                            a(href='#')
+                              img(src='home/img/work/teachforamerica.jpg', alt='')
+                              .overlay
 
-                      li.item.human
-                        a(href='#')
-                          img(src='home/img/work/feedingamerica.png', alt='')
-                          .overlay
+                          li.item.human
+                            a(href='#')
+                              img(src='home/img/work/feedingamerica.png', alt='')
+                              .overlay
 
-                      li.item.education
-                        a(href='#')
-                          img(src='home/img/work/booksforafrica.jpg', alt='')
-                          .overlay
+                          li.item.education
+                            a(href='#')
+                              img(src='home/img/work/booksforafrica.jpg', alt='')
+                              .overlay
 
-                      li.item.active
-                        a(href='#')
-                          img(src='home/img/work/many-many-more.jpg', alt='')
-                          .overlay
+                          li.item.active
+                            a(href='#')
+                              img(src='home/img/work/many-many-more.jpg', alt='')
+                              .overlay
 
         section#clients.page
           .container
@@ -145,24 +146,24 @@ block content
                     .carousel-inner
                       .item.active
                         p.quote
-                          | Quisque convallis diam ligula, ac accumsan eros pretium vel. Curabitur convallis nibh sit amet iaculis ornare. Integer blandit quis diam sed tincidunt.
-                        p.client John Doe / CEO
+                          | I wanted a easier way to donate to the charities I loved, so one night while I was about to fall asleep, CharityDrops came to my mind and the rest was history.
+                        p.client Macleod Sawyer / Cofounder
                       .item
                         p.quote
-                          | Vestibulum volutpat accumsan sem non eleifend. Vivamus pretium nisi semper sapien eleifend, vel lacinia lacus sodales. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra.
-                        p.client Jorginho Jian / Developer
+                          | It's an easier and well organized system to help people in need! I highly recommend it!
+                        p.client David Crosby
                       .item
                         p.quote
-                          | Curabitur in nulla et lorem varius convallis. Morbi bibendum purus at leo laoreet, vel ultricies orci viverra. Duis quis accumsan urna. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut.
-                        p.client Gandalf Kadir / Web Designer
+                          | Have you ever wanted to help and you couldn't? Between school and work it was impossible. But because of CharityDrops it was as easy as 1-2-3.
+                        p.client Elizabth Spicer / Cofounder
                       .item
                         p.quote
-                          | Nullam vel tempor quam, id dictum eros. Nam augue sem, aliquam ac mauris in, pharetra convallis quam. Nulla faucibus mauris elit, vitae tristique nisi sollicitudin ut. Vivamus pretium nisi semper sapien eleifend.
-                        p.client Homeros Yehudi / QA Engineer
+                          | This helped change my life, it made me happier, it made me feel better - but most of all - it helped others.
+                        p.client Benji Figueroa
                     a.left.carousel-control(data-slide='prev', href='#testimonials') ‹
                     a.right.carousel-control(data-slide='next', href='#testimonials') ›
         section#about.page
-          .container
+          //.container
             .content.text-center
               .heading
                 h2 Who are we?
@@ -170,9 +171,9 @@ block content
                 p
                   | We are just two teenagers who want to help make the world better.
                   .row
-                    .col-md-6.teammate.animated.hiding(data-animation='fadeInLeft', data-delay='600')
+                    .col-md-5.teammate.animated.hiding(data-animation='fadeInLeft', data-delay='600')
                       .profile-photo
-                        img.img-responsive(src='home/img/team/1.jpg', alt='')
+                        img.img-responsive(src='home/img/team/macleod.jpg', alt='')
                       .bio
                         h4 Macleod Sawyer
                         h5 CEO | Cofounder
@@ -192,9 +193,9 @@ block content
                           li
                             a(href='mailto:macleod@charitydrops.org', target="_blank", title='Email')
                               i.fa.fa-envelope-o
-                    .col-md-6.teammate.animated.hiding(data-animation='fadeInUp', data-delay='300')
+                    .col-md-5.teammate.animated.hiding(data-animation='fadeInUp', data-delay='300')
                       .profile-photo
-                        img.img-responsive(src='home/img/team/2.jpg', alt='')
+
                       .bio
                         h4 Elizabeth Spicer
                         h5 Cofounder
@@ -222,22 +223,25 @@ block content
                 .col-lg-4.animated.hiding(data-animation='fadeInRight', data-delay='600')
                   i.fa.fa-twitter.fa-3x
                   a(href='http://twitter.com/charitydrops') @CharityDrops
-                .col-lg-4.animated.hiding(data-animation='fadeInDown', data-delay='300')
-                  i.fa.fa-phone.fa-3x
-                  a(href='tel:9876543210') (987) 654-3210
                 .col-lg-4.animated.hiding(data-animation='fadeInLeft', data-delay='600')
                   i.fa.fa-envelope.fa-3x
                   a(href='mailto:support@charitydrops.org') support@charitydrops.org
+                .col-lg-4.animated.hiding(data-animation='fadeInDown', data-delay='300')
+                  i.fa.fa-facebook.fa-3x
+                  a(href='https://facebook.com/charitydrops') CharityDrops
         section#work.page
         #login.page
         #register.page
           .container
             .content.text-center
               .heading
-                h2 Login | Register
+                h2 Register | Login
                 .border
-                p
-                  | We are currently in private beta, the login and register buttons will be here soon!
+                br
+                a.button.btn.btn.btn-primary.animated.hiding(data-animation='rotateIn', data-delay='900', href='/auth/facebook')
+                    i.fa.fa-facebook
+                    | &nbsp;&nbsp;&nbsp;Login With Facebook
+
         footer#footer
           .container
             .row
