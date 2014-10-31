@@ -125,17 +125,19 @@ border-radius: 0px;
     font-size:30px;
     text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
 }
+
 .navbar-default .navbar-nav > li > a {
   text-transform: uppercase;
     color:white;
     
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent;
-    
-}
+  background-color: transparent;}
+
+
 .navbar-default .navbar-toggle { border-color: transparent; }
 
 .navbar-default .navbar-toggle .icon-bar { background-color: white; }
@@ -146,17 +148,19 @@ border-radius: 0px;
   top: 0;
   z-index: 99;
   width: 100%;
-  margin-left: 2px;
   border-bottom-color: transparent;
   -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
      -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
           box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
 }
-.navbar-nav.navbar-right:last-child {
-margin-right: -15px;
-margin-top: 2px;
+
+.affix {
+    padding-left: 21px;
 }
 
+.affix-top {
+    padding-left: 21px;
+}
 .navbar-collapse {
     max-height: 340px;
     overflow-x: visible;
@@ -184,8 +188,6 @@ margin-top: 2px;
 #home {
   padding: 0;
   color: #fff;
-
-
 }
 
 #home h1 {
@@ -193,6 +195,7 @@ margin-top: 2px;
   margin-bottom: 20px;
   font-size: 60px;
 }
+
 #home a { margin: 0 5px }
 #home h3 {
   margin-top: 20px;
@@ -408,8 +411,8 @@ margin-top: 2px;
   .page .content.cover { padding: 160px 0 }
   #testimonials .quote { padding: 0 50px }
   #testimonials .carousel-control.right { right: 10px }
-  brand { font-size: 30px; }
-  #home h1 {font-size: 40px;}
+  brand { font-size: 40px; }
+  #home h1 {font-size: 20px;}
 }
 }
 
