@@ -4,7 +4,7 @@ block content
     if !user
       .loader
           .fading-line
-        section#home.page
+        section#home.page(data-speed="4", data-type="background")
           .container
             .content.cover.text-center
               .row
@@ -222,13 +222,13 @@ block content
               .row
                 .col-lg-4.animated.hiding(data-animation='fadeInRight', data-delay='600')
                   i.fa.fa-twitter.fa-3x
-                  a(href='http://twitter.com/charitydrops') @CharityDrops
+                  a(href='http://twitter.com/charitydrops', target="_blank") @CharityDrops
                 .col-lg-4.animated.hiding(data-animation='fadeInLeft', data-delay='600')
                   i.fa.fa-envelope.fa-3x
-                  a(href='mailto:support@charitydrops.org') support@charitydrops.org
+                  a(href='mailto:support@charitydrops.org', target="_blank") support@charitydrops.org
                 .col-lg-4.animated.hiding(data-animation='fadeInDown', data-delay='300')
                   i.fa.fa-facebook.fa-3x
-                  a(href='https://facebook.com/charitydrops') CharityDrops
+                  a(href='https://facebook.com/charitydrops', target="_blank") CharityDrops
         section#work.page
         #login.page
         #register.page
@@ -248,10 +248,10 @@ block content
               .col-lg-12.animated.hiding(data-animation='fadeInUp')
                 ul.social.list-inline
                   li
-                    a.facebook(href='http://www.facebook.com/charitydrops',target="_blank", title='Facebook')
+                    a.facebook(href='http://www.facebook.com/charitydrops', target="_blank", title='Facebook')
                       i.fa.fa-facebook.fa-2x
                   li
-                    a.twitter(href='http://www.twitter.com/charitydrops',target="_blank", title='Twitter')
+                    a.twitter(href='http://www.twitter.com/charitydrops', target="_blank", title='Twitter')
                       i.fa.fa-twitter.fa-2x
                   li
                     a.tumblr(href='http://blog.charitydrops.org', target="_blank", title='Tumblr | Blog')
@@ -277,6 +277,50 @@ block content
           r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
           ga('create','UA-25089888-9');ga('send','pageview');
         </script>
+        <script type="text/javascript">
+            function flashTextarea(){
+              $('.ta').css({'outline':'1px solid rgba(255,255,0,0.7)'})
+              setTimeout(function(){
+                $('.ta').css({'outline':'1px solid rgba(255,255,0,0)'})
+              },50)
+            }
+
+            $(function(){
+
+              hljs.configure({languages:['js']})
+              hljs.highlightBlock($('#code')[0])
+
+              $('#usage').click(function(){
+                this.focus()
+                this.select()
+              })
+
+
+              $('.textarea').focus()
+                .typetype("Sometimes, it's really nice to simulate a human typing...", {
+                  callback: function() {
+                    $('body').addClass('reveal')
+                  }
+                }).delay(1500)
+                .typetype("\n\nThat's what this `typetype` jQuery plugin is for.")
+                .fadeTo(400,0.3).delay(1000).queue(function(){$('#secondhalf').fadeIn(1000);$('textarea').dequeue()}).delay(4000).fadeTo(400,1.0).delay(1000)
+                .typetype("\n\nYou can make it fast... ",{
+                  keypress:flashTextarea,
+                  t:60,
+                  e:0
+                })
+                .typetype("or slow and error-prone.", {
+                  t:200,
+                  e:0.2, // the default error rate is 0.04
+                  callback: function(){
+                    $("#usage").addClass('show')
+                  }
+                })
+                .backspace(48)
+                .typetype("Try it out!")
+
+            })
+            </script>
     else
         if user.user
         script.
