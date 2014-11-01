@@ -419,6 +419,7 @@ border-radius: 0px;
   #testimonials .carousel-control.right { right: 10px }
   brand { font-size: 40px; }
   #home h1 {font-size: 20px; }
+#home {display:none;}
 }
 
 @media (max-width: 480px) { 
