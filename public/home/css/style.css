@@ -7,13 +7,6 @@ License: Apache License v2.0
 
 */
 
-html {
-}
-
-body {
-height:100%;
-overflow: scroll;
-}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -425,8 +418,8 @@ border-radius: 0px;
   #testimonials .quote { padding: 0 50px }
   #testimonials .carousel-control.right { right: 10px }
   brand { font-size: 40px; }
-  #home h1 {font-size: 20px;}
-}
+  #home h1 {font-size: 20px; }
+  #home { display: none;}
 }
 
 @media (max-width: 480px) { 
