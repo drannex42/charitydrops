@@ -8,14 +8,6 @@ License: Apache License v2.0
 */
 
 html {
-background-image:url('myimage.jpg');
-background-position: center center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-height: 100%;
-overflow: hidden;
 }
 
 body {
@@ -27,13 +19,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #444;
     background: url(../img/cover/biking.jpg) 60% fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-
+background-position: center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+height: 100%;
 }
 
 h1,
