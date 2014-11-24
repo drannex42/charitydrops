@@ -5,6 +5,7 @@ var express = require('express');
 var http = require('http');
 var enforce = require('express-sslify');
 var favicon = require('serve-favicon');
+var compression = require('compression')
 
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
@@ -44,6 +45,9 @@ var passportConf = require('./config/passport');
  */
 
 var app = express();
+app.use(compression({
+  threshold: 512
+}))
 
 
 // favicon
